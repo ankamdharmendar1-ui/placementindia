@@ -28,7 +28,6 @@ export default function Navbar() {
     { name: "Placements", href: "/placements", icon: <Briefcase className="w-4 h-4" /> },
     { name: "Internships", href: "/internships", icon: <GraduationCap className="w-4 h-4" /> },
     { name: "Blog", href: "/blog", icon: <BookOpen className="w-4 h-4" /> },
-    { name: "Dashboard", href: "/dashboard", icon: <User className="w-4 h-4" /> },
   ];
 
   return (

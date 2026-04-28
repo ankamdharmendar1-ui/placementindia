@@ -72,7 +72,7 @@ export default function InternshipList({ initialInternships }: { initialInternsh
         <div className="space-y-4">
           {filteredInternships.length > 0 ? (
             filteredInternships.map(intern => (
-              <div key={intern.id} className="glass p-6 rounded-3xl group hover:border-primary/50 transition-all cursor-pointer flex flex-col md:row items-start md:items-center justify-between gap-6">
+              <div key={intern.id} className="glass p-6 rounded-3xl group hover:border-primary/50 transition-all cursor-pointer flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                 <Link href={`/internships/${intern.id}`} className="flex items-center gap-6 flex-1">
                   <div className="w-16 h-16 bg-muted/10 rounded-2xl flex items-center justify-center font-bold text-2xl text-primary">
                     {intern.logoUrl || intern.company[0]}
@@ -88,7 +88,7 @@ export default function InternshipList({ initialInternships }: { initialInternsh
                     </div>
                   </div>
                 </Link>
-                <div className="flex items-center gap-4 w-full md:w-auto">
+                <div className="flex items-center gap-2 w-full md:w-auto">
                   <button className="flex-1 md:flex-none glass px-6 py-3 rounded-xl font-bold hover:bg-muted/5 transition-all text-sm">
                     Save
                   </button>

@@ -26,7 +26,6 @@ export default function Footer() {
               <li><Link href="/placements" className="hover:text-primary transition-colors">Placements</Link></li>
               <li><Link href="/internships" className="hover:text-primary transition-colors">Internships</Link></li>
               <li><Link href="/blog" className="hover:text-primary transition-colors">Career Blog</Link></li>
-              <li><Link href="/dashboard" className="hover:text-primary transition-colors">User Dashboard</Link></li>
             </ul>
           </div>
 
@@ -49,7 +48,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:row justify-between items-center gap-4 text-sm text-muted">
+        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
           <p>© 2024 PlacementIndia. All rights reserved.</p>
           <div className="flex gap-8">
             <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
