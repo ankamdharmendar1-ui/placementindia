@@ -1,4 +1,4 @@
-"use client";
+import { useState, useEffect } from "react";
 
 interface SocialShareProps {
   title: string;
@@ -6,6 +6,12 @@ interface SocialShareProps {
 }
 
 export default function SocialShare({ title, company }: SocialShareProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const getUrl = () => {
     if (typeof window === "undefined") return "";
     return window.location.href;
@@ -13,6 +19,8 @@ export default function SocialShare({ title, company }: SocialShareProps) {
 
   const text = encodeURIComponent(`Check out this opportunity: ${title} at ${company}`);
   const url = encodeURIComponent(getUrl());
+  
+  if (!mounted) return <div className="h-10" />; // Placeholder to avoid layout shift
   
   const platforms = [
     { 
