@@ -52,7 +52,8 @@ export default function Footer() {
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:row justify-between items-center gap-4 text-sm text-muted">
           <p>© 2024 PlacementIndia. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link href="#" className="hover:text-primary">Privacy Policy</Link>
+            <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
+            <Link href="/contact" className="hover:text-primary">Contact Us</Link>
             <Link href="#" className="hover:text-primary">Terms of Service</Link>
           </div>
         </div>

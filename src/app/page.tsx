@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Search, ArrowRight, Star, ShieldCheck, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import AdUnit from "@/components/ads/AdUnit";
 
 export default function Home() {
   return (
@@ -43,6 +44,9 @@ export default function Home() {
             Search Opportunities
           </button>
         </div>
+
+        {/* Top Ad Unit */}
+        <AdUnit slot="1234567890" />
 
         <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-muted font-medium">
           <div className="flex items-center gap-2"><Star className="w-4 h-4 text-secondary" /> Top-rated roles</div>
@@ -106,6 +110,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Middle Ad Unit */}
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        <AdUnit slot="0987654321" />
+      </div>
 
       {/* Blog Preview */}
       <section className="max-w-7xl mx-auto px-6 w-full">

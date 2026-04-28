@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import AdUnit from "@/components/ads/AdUnit";
 import { notFound } from "next/navigation";
 import { Calendar, IndianRupee, Globe, ChevronLeft, Share2, Bookmark, Lightbulb, Briefcase } from "lucide-react";
 import Link from "next/link";
@@ -72,6 +73,8 @@ export default async function InternshipDetailPage({ params }: { params: Promise
             <p className="font-bold flex items-center gap-2"><Briefcase className="w-4 h-4 text-primary" /> {intern.category}</p>
           </div>
         </div>
+
+        <AdUnit slot="5544332211" />
 
         <div className="prose prose-slate max-w-none">
           <section className="mb-12">

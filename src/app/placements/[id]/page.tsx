@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import AdUnit from "@/components/ads/AdUnit";
 import { notFound } from "next/navigation";
 import { MapPin, Briefcase, IndianRupee, Clock, ChevronLeft, Share2, Bookmark, Lightbulb } from "lucide-react";
 import Link from "next/link";
@@ -72,6 +73,8 @@ export default async function JobDetailPage({ params }: { params: Promise<{ id: 
             <p className="font-bold flex items-center gap-2"><Clock className="w-4 h-4 text-primary" /> {new Date(job.createdAt).toLocaleDateString()}</p>
           </div>
         </div>
+
+        <AdUnit slot="1122334455" />
 
         <div className="prose prose-slate max-w-none">
           <section className="mb-12">
