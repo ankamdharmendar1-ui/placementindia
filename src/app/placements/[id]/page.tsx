@@ -44,7 +44,7 @@ export default async function JobDetailPage({ params }: { params: Promise<{ id: 
               <p className="text-xl text-muted font-medium">{job.company} • {job.location}</p>
             </div>
           </div>
-          <JobActions title={job.title} company={job.company} />
+          <JobActions title={job.title} company={job.company} applyLink={job.applyLink} />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-border mb-12">

@@ -6,12 +6,14 @@ import { useState } from "react";
 interface JobActionsProps {
   title: string;
   company: string;
+  applyLink?: string | null;
 }
 
-export default function JobActions({ title, company }: JobActionsProps) {
+export default function JobActions({ title, company, applyLink }: JobActionsProps) {
   const [isSaved, setIsSaved] = useState(false);
 
   const handleShare = async () => {
+    // ... same as before
     if (navigator.share) {
       try {
         await navigator.share({
@@ -36,7 +38,6 @@ export default function JobActions({ title, company }: JobActionsProps) {
 
   const handleSave = () => {
     setIsSaved(!isSaved);
-    // In a real app, this would call an API to save to the database
     alert(isSaved ? "Removed from saved items" : "Saved to your profile!");
   };
 
@@ -56,9 +57,20 @@ export default function JobActions({ title, company }: JobActionsProps) {
       >
         <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
       </button>
-      <button className="flex-[3] md:flex-none bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
-        Apply Now
-      </button>
+      {applyLink ? (
+        <a 
+          href={applyLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-[3] md:flex-none bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all flex items-center justify-center"
+        >
+          Apply Now
+        </a>
+      ) : (
+        <button className="flex-[3] md:flex-none bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+          Apply Now
+        </button>
+      )}
     </div>
   );
 }

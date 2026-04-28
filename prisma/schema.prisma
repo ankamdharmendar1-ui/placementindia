@@ -38,6 +38,7 @@ model Job {
   category      String    // Software, Marketing, etc.
   type          String    @default("Full-time")
   logoUrl       String?
+  applyLink     String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   applications  Application[]
@@ -56,6 +57,7 @@ model Internship {
   isRemote      Boolean   @default(false)
   category      String
   logoUrl       String?
+  applyLink     String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   applications  Application[]

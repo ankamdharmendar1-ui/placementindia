@@ -92,9 +92,11 @@ export default function InternshipList({ initialInternships }: { initialInternsh
                   <button className="flex-1 md:flex-none glass px-6 py-3 rounded-xl font-bold hover:bg-muted/5 transition-all text-sm">
                     Save
                   </button>
-                  <button className="flex-1 md:flex-none bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all text-sm flex items-center justify-center gap-2">
-                    View Details <ChevronRight className="w-4 h-4" />
-                  </button>
+                  <Link href={`/internships/${intern.id}`} className="flex-1 md:flex-none">
+                    <button className="w-full bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all text-sm flex items-center justify-center gap-2">
+                      View Details <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))

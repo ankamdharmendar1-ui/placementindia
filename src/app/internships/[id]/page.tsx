@@ -44,7 +44,7 @@ export default async function InternshipDetailPage({ params }: { params: Promise
               <p className="text-xl text-muted font-medium">{intern.company} • {intern.location}</p>
             </div>
           </div>
-          <JobActions title={intern.title} company={intern.company} />
+          <JobActions title={intern.title} company={intern.company} applyLink={intern.applyLink} />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-border mb-12">
