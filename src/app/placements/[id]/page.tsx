@@ -2,6 +2,17 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { MapPin, Briefcase, IndianRupee, Clock, ChevronLeft, Share2, Bookmark, Lightbulb } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export async function generateStaticParams() {
+  const jobs = await prisma.job.findMany({
+    select: { id: true },
+  });
+
+  return jobs.map((job) => ({
+    id: job.id,
+  }));
+}
 
 export default async function JobDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

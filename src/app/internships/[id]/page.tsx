@@ -2,6 +2,17 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { Calendar, IndianRupee, Globe, ChevronLeft, Share2, Bookmark, Lightbulb, Briefcase } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export async function generateStaticParams() {
+  const interns = await prisma.internship.findMany({
+    select: { id: true },
+  });
+
+  return interns.map((intern) => ({
+    id: intern.id,
+  }));
+}
 
 export default async function InternshipDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
