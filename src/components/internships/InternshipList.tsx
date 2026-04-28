@@ -49,6 +49,8 @@ export default function InternshipList({ initialInternships }: { initialInternsh
                 <option>All Locations</option>
                 <option>Bangalore</option>
                 <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Hyderabad</option>
                 <option>Remote</option>
               </select>
             </div>

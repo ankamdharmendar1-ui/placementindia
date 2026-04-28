@@ -50,6 +50,8 @@ export default function PlacementList({ initialJobs }: { initialJobs: Job[] }) {
                 <option>Bangalore</option>
                 <option>Gurgaon</option>
                 <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Hyderabad</option>
                 <option>Remote</option>
               </select>
             </div>
