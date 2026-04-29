@@ -26,3 +26,16 @@ export interface Internship {
   logoUrl?: string | null;
   createdAt: Date;
 }
+
+export interface WfhJob {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  salary: string | null;
+  description: string;
+  eligibility: string;
+  category: string;
+  logoUrl?: string | null;
+  createdAt: Date;
+}

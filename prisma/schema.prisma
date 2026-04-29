@@ -64,6 +64,23 @@ model Internship {
   savedIn       SavedItem[]
 }
 
+model WfhJob {
+  id            String    @id @default(cuid())
+  title         String
+  company       String
+  location      String    @default("Remote")
+  salary        String?
+  description   String
+  eligibility   String
+  category      String
+  logoUrl       String?
+  applyLink     String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  applications  Application[]
+  savedIn       SavedItem[]
+}
+
 model BlogPost {
   id            String    @id @default(cuid())
   title         String
@@ -87,6 +104,8 @@ model Application {
   job           Job?        @relation(fields: [jobId], references: [id])
   internshipId  String?
   internship    Internship? @relation(fields: [internshipId], references: [id])
+  wfhJobId      String?
+  wfhJob        WfhJob?     @relation(fields: [wfhJobId], references: [id])
   status        String      @default("PENDING") // PENDING, REVIEWING, ACCEPTED, REJECTED
   appliedAt     DateTime    @default(now())
 }
@@ -99,5 +118,7 @@ model SavedItem {
   job           Job?        @relation(fields: [jobId], references: [id])
   internshipId  String?
   internship    Internship? @relation(fields: [internshipId], references: [id])
+  wfhJobId      String?
+  wfhJob        WfhJob?     @relation(fields: [wfhJobId], references: [id])
   createdAt     DateTime    @default(now())
 }

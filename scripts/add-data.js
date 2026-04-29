@@ -59,6 +59,29 @@ const NEW_INTERNSHIPS = [
   }
 ];
 
+const NEW_WFH_JOBS = [
+  {
+    title: "Remote Content Writer",
+    company: "Copy.ai",
+    location: "Remote",
+    salary: "₹8L - ₹12L",
+    category: "Marketing",
+    description: "Write high-quality blog posts and marketing copy for our AI-powered platform. This is a 100% remote role.",
+    eligibility: "Excellent writing skills, understanding of SEO, and ability to work independently.",
+    applyLink: "https://www.copy.ai/careers",
+  },
+  {
+    title: "Senior Product Designer",
+    company: "Canva",
+    location: "Remote",
+    salary: "₹35L - ₹50L",
+    category: "Design",
+    description: "Lead the design of new features for Canva's collaboration tools. Work with a global team from the comfort of your home.",
+    eligibility: "5+ years of experience in product design, strong portfolio, and experience with Figma.",
+    applyLink: "https://www.canva.com/careers",
+  }
+];
+
 async function main() {
   console.log("⏳ Adding data...");
 
@@ -74,6 +97,13 @@ async function main() {
       data: NEW_INTERNSHIPS,
     });
     console.log(`✅ ${NEW_INTERNSHIPS.length} Internships Added`);
+  }
+
+  if (NEW_WFH_JOBS.length > 0) {
+    await prisma.wfhJob.createMany({
+      data: NEW_WFH_JOBS,
+    });
+    console.log(`✅ ${NEW_WFH_JOBS.length} WFH Jobs Added`);
   }
 
   console.log("✨ All done!");

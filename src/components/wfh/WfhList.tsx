@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Filter, MapPin, Briefcase, IndianRupee, Clock, ChevronRight } from "lucide-react";
+import { Search, Filter, MapPin, Briefcase, IndianRupee, Clock, ChevronRight, Zap } from "lucide-react";
 import Link from "next/link";
-import { Job } from "@/lib/types";
+import { WfhJob } from "@/lib/types";
 
-export default function PlacementList({ initialJobs }: { initialJobs: Job[] }) {
+export default function WfhList({ initialJobs }: { initialJobs: WfhJob[] }) {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isMounted, setIsMounted] = useState(false);
@@ -14,7 +14,7 @@ export default function PlacementList({ initialJobs }: { initialJobs: Job[] }) {
     setIsMounted(true);
   }, []);
 
-  const categories = ["All", "Software", "Data", "Product", "Design", "Marketing"];
+  const categories = ["All", "Software", "Data", "Product", "Design", "Marketing", "Content"];
 
   const filteredJobs = initialJobs.filter(job => 
     (selectedCategory === "All" || job.category === selectedCategory) &&
@@ -50,15 +50,9 @@ export default function PlacementList({ initialJobs }: { initialJobs: Job[] }) {
 
             <div>
               <label className="text-xs font-bold uppercase tracking-wider text-muted mb-3 block">Location</label>
-              <select className="w-full bg-transparent border border-border rounded-xl px-4 py-2 text-sm outline-none focus:border-primary transition-all">
-                <option>All Locations</option>
-                <option>Bangalore</option>
-                <option>Gurgaon</option>
-                <option>Mumbai</option>
-                <option>Delhi</option>
-                <option>Hyderabad</option>
-                <option>Remote</option>
-              </select>
+              <div className="px-4 py-3 bg-muted/10 rounded-xl flex items-center gap-2 text-sm text-primary font-bold">
+                <Zap className="w-4 h-4" /> Fully Remote
+              </div>
             </div>
           </div>
         </div>
@@ -81,7 +75,7 @@ export default function PlacementList({ initialJobs }: { initialJobs: Job[] }) {
           {filteredJobs.length > 0 ? (
             filteredJobs.map(job => (
               <div key={job.id} className="glass p-6 rounded-3xl group hover:border-primary/50 transition-all cursor-pointer flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                <Link href={`/placements/${job.id}`} className="flex items-center gap-6 flex-1">
+                <Link href={`/wfh/${job.id}`} className="flex items-center gap-6 flex-1">
                   <div className="w-16 h-16 bg-muted/10 rounded-2xl flex items-center justify-center font-bold text-2xl text-primary">
                     {job.logoUrl || job.company[0]}
                   </div>
@@ -89,8 +83,7 @@ export default function PlacementList({ initialJobs }: { initialJobs: Job[] }) {
                     <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{job.title}</h3>
                     <p className="font-medium text-muted mb-2">{job.company}</p>
                     <div className="flex flex-wrap gap-4 text-sm text-muted">
-                      <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {job.location}</span>
-                      <span className="flex items-center gap-1"><Briefcase className="w-3 h-3" /> {job.type}</span>
+                      <span className="flex items-center gap-1 text-primary font-semibold"><Zap className="w-3 h-3" /> Remote</span>
                       <span className="flex items-center gap-1"><IndianRupee className="w-3 h-3" /> {job.salary}</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {isMounted ? new Date(job.createdAt).toLocaleDateString() : "Loading..."}</span>
                     </div>
@@ -100,7 +93,7 @@ export default function PlacementList({ initialJobs }: { initialJobs: Job[] }) {
                   <button className="flex-1 md:flex-none glass px-6 py-3 rounded-xl font-bold hover:bg-muted/5 transition-all text-sm">
                     Save
                   </button>
-                  <Link href={`/placements/${job.id}`} className="flex-1 md:flex-none">
+                  <Link href={`/wfh/${job.id}`} className="flex-1 md:flex-none">
                     <button className="w-full bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all text-sm flex items-center justify-center gap-2">
                       View Details <ChevronRight className="w-4 h-4" />
                     </button>
@@ -110,7 +103,7 @@ export default function PlacementList({ initialJobs }: { initialJobs: Job[] }) {
             ))
           ) : (
             <div className="text-center py-24 glass rounded-3xl">
-              <p className="text-muted font-medium">No opportunities found matching your criteria.</p>
+              <p className="text-muted font-medium">No remote opportunities found matching your criteria.</p>
             </div>
           )}
         </div>

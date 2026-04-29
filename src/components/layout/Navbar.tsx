@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { GraduationCap, Briefcase, BookOpen, User, Menu, X, Sun, Moon } from "lucide-react";
+import { GraduationCap, Briefcase, BookOpen, User, Menu, X, Sun, Moon, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -27,6 +27,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Placements", href: "/placements", icon: <Briefcase className="w-4 h-4" /> },
     { name: "Internships", href: "/internships", icon: <GraduationCap className="w-4 h-4" /> },
+    { name: "WFH Jobs", href: "/wfh", icon: <Zap className="w-4 h-4" /> },
     { name: "Blog", href: "/blog", icon: <BookOpen className="w-4 h-4" /> },
   ];
 
