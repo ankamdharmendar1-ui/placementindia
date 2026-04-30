@@ -72,7 +72,13 @@ const NEW_WFH_JOBS = [
 ];
 
 async function main() {
-  console.log("⏳ Adding data...");
+  console.log("⏳ Syncing data (clearing old and adding new)...");
+
+  // Clear existing data to ensure we only have what's in this script
+  await prisma.job.deleteMany({});
+  await prisma.internship.deleteMany({});
+  await prisma.wfhJob.deleteMany({});
+  console.log("🗑️  Existing data cleared from database");
 
   if (NEW_JOBS.length > 0) {
     await prisma.job.createMany({
@@ -95,7 +101,7 @@ async function main() {
     console.log(`✅ ${NEW_WFH_JOBS.length} WFH Jobs Added`);
   }
 
-  console.log("✨ All done!");
+  console.log("✨ Sync complete!");
 }
 
 main()
