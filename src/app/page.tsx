@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Search, ArrowRight, Star, ShieldCheck, Zap } from "lucide-react";
+import { Search, ArrowRight, Star, ShieldCheck, Zap, Briefcase, GraduationCap, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import AdUnit from "@/components/ads/AdUnit";
 
@@ -43,6 +43,30 @@ export default function Home() {
           <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all w-full md:w-auto shadow-lg shadow-primary/20">
             Search Opportunities
           </button>
+        </div>
+
+        {/* Quick Categories - Mobile Primary */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto px-2">
+          {[
+            { name: "Placements", href: "/placements", icon: <Briefcase className="w-6 h-6 text-blue-500" />, count: "250+", color: "bg-blue-500/10" },
+            { name: "Internships", href: "/internships", icon: <GraduationCap className="w-6 h-6 text-emerald-500" />, count: "180+", color: "bg-emerald-500/10" },
+            { name: "WFH Jobs", href: "/wfh", icon: <Zap className="w-6 h-6 text-amber-500" />, count: "120+", color: "bg-amber-500/10" },
+            { name: "Blog", href: "/blog", icon: <BookOpen className="w-6 h-6 text-rose-500" />, count: "NEW", color: "bg-rose-500/10" },
+          ].map((cat) => (
+            <Link 
+              key={cat.name} 
+              href={cat.href}
+              className="glass p-6 rounded-3xl flex flex-col items-center gap-3 hover:scale-105 transition-all border border-muted/5 group"
+            >
+              <div className={`w-12 h-12 ${cat.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                {cat.icon}
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-sm font-bold">{cat.name}</span>
+                <span className="text-[10px] font-bold text-muted uppercase tracking-widest">{cat.count}</span>
+              </div>
+            </Link>
+          ))}
         </div>
 
         {/* Top Ad Unit */}

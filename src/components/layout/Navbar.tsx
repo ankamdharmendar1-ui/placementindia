@@ -78,6 +78,22 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile Horizontal Nav */}
+      <div className="md:hidden border-t border-muted/10 bg-background/80 backdrop-blur-md overflow-x-auto scrollbar-hide">
+        <div className="flex items-center gap-2 px-4 py-3 min-w-max">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="flex items-center gap-2 px-4 py-2 rounded-full glass-card text-xs font-bold whitespace-nowrap hover:bg-primary/10 hover:text-primary transition-all border border-muted/10 shadow-sm"
+            >
+              {link.icon}
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
