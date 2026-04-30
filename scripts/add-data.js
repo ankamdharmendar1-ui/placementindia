@@ -34,29 +34,18 @@ const NEW_JOBS = [
 
 const NEW_INTERNSHIPS = [
   {
-    title: "UI/UX Design Intern",
-    company: "Swiggy",
-    location: "Remote",
-    stipend: "₹25,000/month",
-    duration: "4 Months",
+    title: "UX/UI Design Intern",
+    company: "Picktime",
+    location: "Hyderabad",
+    stipend: "no stipend",
+    duration: "not disclosed",
     category: "Design",
-    description: "Work with the product design team to create delightful user interfaces and experiences for the Swiggy app.",
-    eligibility: "Portfolio demonstrating UI/UX skills. Proficiency in Figma.",
-    applyLink: "https://careers.swiggy.com/",
+    description: "Assist in UI/UX design by creating wireframes and prototypes, conducting user research, collaborating with teams, improving product usability, following design systems, and staying updated with latest trends.",
+    eligibility: "Freshers are eligible",
+    applyLink: "https://www.linkedin.com/jobs/view/4398947887/",
     isRemote: true,
   },
-  {
-    title: "Data Analyst Intern",
-    company: "Cred",
-    location: "Bangalore",
-    stipend: "₹40,000/month",
-    duration: "6 Months",
-    category: "Data",
-    description: "Analyze user behavior and transaction data to drive product insights.",
-    eligibility: "Strong SQL skills. Proficiency in Python or R for data analysis.",
-    applyLink: "https://cred.club/careers",
-    isRemote: false,
-  }
+  
 ];
 
 const NEW_WFH_JOBS = [
