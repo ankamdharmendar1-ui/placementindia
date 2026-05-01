@@ -105,21 +105,21 @@ async function main() {
 
   if (NEW_JOBS.length > 0) {
     await prisma.job.createMany({
-      data: NEW_JOBS,
+      data: NEW_JOBS.map((item, index) => ({ ...item, createdAt: new Date(Date.now() + index * 1000) })),
     });
     console.log(`✅ ${NEW_JOBS.length} Jobs Added`);
   }
 
   if (NEW_INTERNSHIPS.length > 0) {
     await prisma.internship.createMany({
-      data: NEW_INTERNSHIPS,
+      data: NEW_INTERNSHIPS.map((item, index) => ({ ...item, createdAt: new Date(Date.now() + index * 1000) })),
     });
     console.log(`✅ ${NEW_INTERNSHIPS.length} Internships Added`);
   }
 
   if (NEW_WFH_JOBS.length > 0) {
     await prisma.wfhJob.createMany({
-      data: NEW_WFH_JOBS,
+      data: NEW_WFH_JOBS.map((item, index) => ({ ...item, createdAt: new Date(Date.now() + index * 1000) })),
     });
     console.log(`✅ ${NEW_WFH_JOBS.length} WFH Jobs Added`);
   }
