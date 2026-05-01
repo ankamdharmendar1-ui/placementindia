@@ -45,7 +45,18 @@ const NEW_INTERNSHIPS = [
     applyLink: "https://www.linkedin.com/jobs/view/4398947887/",
     isRemote: true,
   },
-  
+  {
+    title: "Python Full Stack Intern",
+    company: "Codebook.in",
+    location: "Hyderabad",
+    stipend: "Up to ₹1,000/month",
+    duration: "not disclosed",
+    category: "Software",
+    description: "Python Developer Intern (Fresher) role at Codebook.in.",
+    eligibility: "Freshers are eligible",
+    applyLink: "https://in.indeed.com/viewjob?jk=58ab09902d5e3c08&from=shareddesktop_copy",
+    isRemote: false,
+  },
 ];
 
 const NEW_WFH_JOBS = [
