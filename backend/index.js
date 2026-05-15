@@ -25,6 +25,7 @@ app.use('/api/upload', require('./routes/upload'));
 app.use('/api/citation', require('./routes/citation'));
 app.use('/api/summarize', require('./routes/summarizer'));
 app.use('/api/reports', require('./routes/reports'));
+app.use('/api/grammar', require('./routes/grammar'));
 
 // Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
