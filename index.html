@@ -133,12 +133,13 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Quetext.in: Advanced Plagiarism Checker & AI Content Detector</h1>
-                <p>Ensure originality with high-confidence DeepSearch analysis, source mapping, and color-coded similarity highlights.</p>
+                <div class="badge">Trusted by 2M+ writers worldwide</div>
+                <h1>Advanced Plagiarism Checker & AI Content Detector</h1>
+                <p>Ensure academic integrity and content originality with high-confidence DeepSearch analysis, source mapping, and semantic verification.</p>
 
                 <div class="tool-box" id="tools">
                     <div class="tool-tabs">
-                        <button class="tool-tab active" data-tool="plagiarism">Plagiarism Checker</button>
+                        <button class="tool-tab active" data-tool="plagiarism">Plagiarism</button>
                         <button class="tool-tab" data-tool="ai">AI Detector</button>
                         <button class="tool-tab" data-tool="grammar">Grammar</button>
                     </div>
@@ -152,10 +153,10 @@
                             <div class="textarea-footer">
                                 <div class="word-count"><span id="words">0</span> / 2,500 words</div>
                                 <div class="footer-actions">
-                                    <input id="fileInput" type="file" accept=".txt,.pdf,.docx">
-                                    <button class="btn btn-outline" id="scanFileBtn">Scan File</button>
-                                    <button class="btn btn-outline" id="downloadReportBtn" disabled>Download Report</button>
-                                    <button class="btn btn-primary" id="scanBtn">Check for Plagiarism</button>
+                                    <button class="btn btn-icon" title="Upload File">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                                    </button>
+                                    <button class="btn btn-primary" id="scanBtn">Check Originality</button>
                                 </div>
                             </div>
                             <p id="statusMessage" class="status-message hidden"></p>
@@ -166,14 +167,16 @@
 
                         <aside class="results-pane">
                             <div class="score-card">
-                                <p>Overall Similarity</p>
-                                <h3><span id="overallScore">0</span>%</h3>
-                                <span id="riskBadge" class="risk low">Low</span>
+                                <div class="score-circle">
+                                    <span id="overallScore">0</span>%
+                                </div>
+                                <p>Similarity Score</p>
+                                <span id="riskBadge" class="risk low">Perfect</span>
                             </div>
                             <div class="sources-card">
-                                <h4>Top Sources</h4>
+                                <h4>Matched Sources</h4>
                                 <div id="sourceList" class="source-list">
-                                    <p class="empty-state">Run a scan to view matched sources.</p>
+                                    <p class="empty-state">No matches found yet.</p>
                                 </div>
                             </div>
                         </aside>
@@ -182,24 +185,35 @@
             </div>
         </section>
 
+        <section class="stats-bar">
+            <div class="container stats-grid">
+                <div class="stat-item"><strong>1.2B+</strong> <span>Pages Indexed</span></div>
+                <div class="stat-item"><strong>99.9%</strong> <span>Accuracy Rate</span></div>
+                <div class="stat-item"><strong>150+</strong> <span>Languages</span></div>
+            </div>
+        </section>
+
         <section class="features" id="features">
             <div class="container">
                 <div class="section-title">
-                    <h2>Built for high-confidence checks</h2>
-                    <p>Fingerprint matching + semantic analysis + source-level verification.</p>
+                    <h2>Engineered for Precision</h2>
+                    <p>Moving beyond simple word matching to deep semantic analysis.</p>
                 </div>
                 <div class="feature-grid">
                     <article class="feature-card">
-                        <h3>DeepSearch Technology</h3>
-                        <p>Phrase-level fingerprint generation and source retrieval from web results.</p>
+                        <div class="feature-icon">🔍</div>
+                        <h3>DeepSearch™ Tech</h3>
+                        <p>Analyze phrase-level fingerprints across billions of web pages and journals.</p>
                     </article>
                     <article class="feature-card">
-                        <h3>Color Highlights</h3>
-                        <p>Red for high overlap, yellow for partial paraphrase similarity.</p>
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI Originality</h3>
+                        <p>Detect GPT-4, Claude, and Gemini generated content with proprietary algorithms.</p>
                     </article>
                     <article class="feature-card">
+                        <div class="feature-icon">📑</div>
                         <h3>Source Mapping</h3>
-                        <p>Sentence-level links to suspected source pages for fast review.</p>
+                        <p>Get exact sentence-level links to matching sources for fast verification.</p>
                     </article>
                 </div>
             </div>
