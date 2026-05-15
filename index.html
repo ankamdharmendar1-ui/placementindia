@@ -25,91 +25,45 @@
     <meta property="twitter:description" content="Accurate plagiarism detection and AI content identification with DeepSearch technology. Start checking for free today.">
     <meta property="twitter:image" content="https://quetext.in/og-image.jpg">
 
-    <!-- JSON-LD Schema: Organization (For Branding & Logo in Google) -->
+    <!-- Combined JSON-LD Structured Data (Optimized for Google) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Quetext.in",
-      "url": "https://quetext.in/",
-      "logo": "https://quetext.in/favicon.png",
-      "sameAs": [
-        "https://facebook.com/quetext",
-        "https://twitter.com/quetext",
-        "https://linkedin.com/company/quetext"
-      ]
-    }
-    </script>
-
-    <!-- JSON-LD Schema: WebApplication -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Quetext.in",
-      "url": "https://quetext.in/",
-      "description": "Quetext.in is a powerful, free plagiarism checker and AI detector using DeepSearch technology.",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-
-    <!-- JSON-LD Schema: SiteNavigationElement (For Sitelinks) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
+      "@graph": [
         {
-          "@type": "SiteNavigationElement",
-          "position": 1,
-          "name": "Plagiarism Checker",
-          "url": "https://quetext.in/plagiarism-checker"
+          "@type": "Organization",
+          "name": "Quetext.in",
+          "url": "https://quetext.in/",
+          "logo": "https://quetext.in/favicon.png",
+          "sameAs": [
+            "https://facebook.com/quetext",
+            "https://twitter.com/quetext",
+            "https://linkedin.com/company/quetext"
+          ]
         },
         {
-          "@type": "SiteNavigationElement",
-          "position": 2,
-          "name": "AI Detector",
-          "url": "https://quetext.in/ai-content-detector"
+          "@type": "WebApplication",
+          "name": "Quetext.in",
+          "url": "https://quetext.in/",
+          "description": "Powerful, free plagiarism checker and AI detector using DeepSearch technology.",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          }
         },
         {
-          "@type": "SiteNavigationElement",
-          "position": 3,
-          "name": "Grammar Checker",
-          "url": "https://quetext.in/grammar-checker"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 4,
-          "name": "Paraphrasing Tool",
-          "url": "https://quetext.in/paraphrasing-tool"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 5,
-          "name": "Pricing",
-          "url": "https://quetext.in/#pricing"
+          "@type": "WebSite",
+          "url": "https://quetext.in/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://quetext.in/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
         }
       ]
-    }
-    </script>
-
-    <!-- JSON-LD Schema: Sitelinks Searchbox -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": "https://quetext.in/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://quetext.in/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
     }
     </script>
 </head>
