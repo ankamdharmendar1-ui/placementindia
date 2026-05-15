@@ -235,9 +235,10 @@ textarea {
 .feature-card:hover { border-color: var(--royal-blue); background: var(--soft-lavender); }
 
 /* Mobile Optimizations */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .workspace { grid-template-columns: 1fr; }
     .hero h1 { font-size: 3.2rem; }
+    nav { display: none; }
 }
 
 @media (max-width: 600px) {
