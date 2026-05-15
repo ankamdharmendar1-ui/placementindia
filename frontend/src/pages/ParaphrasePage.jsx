@@ -110,6 +110,47 @@ const ParaphrasePage = () => {
           )}
         </div>
       </div>
+
+      {/* Content Section for SEO and AdSense */}
+      <div className="mt-16 max-w-4xl mx-auto">
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">What is Paraphrasing?</h2>
+          <p className="text-gray-700 mb-4">
+            Paraphrasing is the process of rewriting someone else's ideas or text in your own words. 
+            Unlike simple copying, effective paraphrasing involves understanding the core message 
+            and expressing it with a new sentence structure and vocabulary while maintaining 
+            the original meaning.
+          </p>
+          <p className="text-gray-700 mb-4">
+            Our online paraphrasing tool helps you quickly reword sentences and paragraphs to 
+            improve clarity, avoid plagiarism, and adjust the tone of your writing. Whether you 
+            need to make a sentence more formal for an academic paper or more casual for a blog 
+            post, our tool provides multiple styles to suit your needs.
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="border-b pb-4">
+              <h3 className="font-semibold text-lg mb-2">Is paraphrasing the same as plagiarism?</h3>
+              <p className="text-gray-600">Paraphrasing is not plagiarism if you cite your sources correctly and rewrite the text significantly. Simply changing a few words (patchwriting) can still be considered plagiarism. Our tool helps you get started with a new structure.</p>
+            </div>
+            <div className="border-b pb-4">
+              <h3 className="font-semibold text-lg mb-2">How many styles are available?</h3>
+              <p className="text-gray-600">We offer five distinct styles: Standard, Formal, Casual, Creative, and Academic. Each style uses different vocabulary and sentence structures to achieve the desired tone.</p>
+            </div>
+            <div className="border-b pb-4">
+              <h3 className="font-semibold text-lg mb-2">Is the paraphrased text unique?</h3>
+              <p className="text-gray-600">Yes, our tool generates unique variations of your input. However, we recommend always running the result through our plagiarism checker to ensure it's sufficiently different from the source.</p>
+            </div>
+            <div className="border-b pb-4">
+              <h3 className="font-semibold text-lg mb-2">Can I use this for academic writing?</h3>
+              <p className="text-gray-600">Yes, the "Academic" style is specifically designed to help students and researchers reword complex ideas while maintaining a professional and scholarly tone.</p>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

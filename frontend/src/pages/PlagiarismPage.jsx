@@ -78,6 +78,46 @@ const PlagiarismPage = () => {
           )}
         </div>
       </div>
+
+      {/* Content Section for SEO and AdSense */}
+      <div className="mt-16 max-w-4xl mx-auto">
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">Why Use Our Plagiarism Checker?</h2>
+          <p className="text-gray-700 mb-4">
+            Our free online plagiarism checker is designed to help students, writers, and professionals 
+            ensure the originality of their work. With billions of web pages and academic documents indexed, 
+            we provide one of the most comprehensive scans available on the market today.
+          </p>
+          <p className="text-gray-700 mb-4">
+            Detecting plagiarism is not just about catching copied text; it's about helping you maintain 
+            academic integrity and improving your writing skills. Our tool highlights potential matches 
+            and provides links to sources, making it easy for you to cite correctly or rewrite content 
+            to be more original.
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="border-b pb-4">
+              <h3 className="font-semibold text-lg mb-2">Is this plagiarism checker really free?</h3>
+              <p className="text-gray-600">Yes, we offer a free version that allows you to scan documents for plagiarism. We also have premium options for users who need higher limits and advanced features.</p>
+            </div>
+            <div className="border-b pb-4">
+              <h3 className="font-semibold text-lg mb-2">How do I interpret the plagiarism score?</h3>
+              <p className="text-gray-600">The score represents the percentage of your text that matches external sources. A low score (under 5-10%) is generally acceptable in many academic settings, but you should always strive for 100% originality.</p>
+            </div>
+            <div className="border-b pb-4">
+              <h3 className="font-semibold text-lg mb-2">Does my text get saved to a database?</h3>
+              <p className="text-gray-600">We respect your privacy. Unlike some other checkers, we do not add your text to a public database, ensuring your work remains yours alone.</p>
+            </div>
+            <div className="border-b pb-4">
+              <h3 className="font-semibold text-lg mb-2">Can it check PDFs and Word documents?</h3>
+              <p className="text-gray-600">Currently, our online tool works best with text copy-pasted into the editor. We are working on direct file upload features for future updates.</p>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

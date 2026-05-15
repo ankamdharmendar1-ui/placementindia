@@ -21,7 +21,7 @@ export default function Navbar() {
                 <Link to="/plagiarism" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Plagiarism Checker</Link>
                 <Link to="/ai-detection" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">AI Detection</Link>
                 <Link to="/paraphrase" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Paraphrasing</Link>
-                <Link to="/citation" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Citation Generator</Link>
+                <Link to="/about" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">About</Link>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function Navbar() {
             <Link to="/plagiarism" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Plagiarism Checker</Link>
             <Link to="/ai-detection" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">AI Detection</Link>
             <Link to="/paraphrase" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Paraphrasing</Link>
-            <Link to="/citation" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Citation Generator</Link>
+            <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">About</Link>
           </div>
           <div className="pt-4 pb-3 border-t border-blue-700">
             <div className="flex items-center px-5">
