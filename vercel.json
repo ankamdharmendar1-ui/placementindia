@@ -2,21 +2,18 @@
   "version": 2,
   "name": "quetext-in",
   "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "about.html", "use": "@vercel/static" },
-    { "src": "privacy-policy.html", "use": "@vercel/static" },
-    { "src": "terms.html", "use": "@vercel/static" },
-    { "src": "disclaimer.html", "use": "@vercel/static" },
-    { "src": "contact.html", "use": "@vercel/static" },
-    { "src": "app.js", "use": "@vercel/static" },
-    { "src": "index.css", "use": "@vercel/static" },
-    { "src": "favicon.png", "use": "@vercel/static" },
-    { "src": "robots.txt", "use": "@vercel/static" },
-    { "src": "sitemap.xml", "use": "@vercel/static" },
-    { "src": "backend/index.js", "use": "@vercel/node" }
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/_/backend/api/(.*)", "dest": "backend/index.js" },
-    { "src": "/(.*)", "dest": "/$1" }
+    { "src": "/api/(.*)", "dest": "backend/index.js" },
+    { "src": "/(.*)", "dest": "frontend/$1" }
   ]
 }
