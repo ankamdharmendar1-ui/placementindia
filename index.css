@@ -235,16 +235,53 @@ textarea {
 .feature-card:hover { border-color: var(--royal-blue); background: var(--soft-lavender); }
 
 /* Mobile Optimizations */
+/* Contact Section */
+.contact { padding: 100px 0; background: var(--bg-alt); }
+.contact-card {
+    background: var(--white);
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+}
+.contact-card h2 { font-size: 3rem; margin-bottom: 16px; }
+.contact-email {
+    display: inline-block;
+    margin-top: 32px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--royal-blue);
+    text-decoration: none;
+    padding: 12px 32px;
+    background: #eff6ff;
+    border-radius: 100px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    opacity: 0.4;
+    font-size: 0.9rem;
+}
+
+.footer-grid ul { list-style: none; }
+.footer-grid ul li a { color: white; text-decoration: none; opacity: 0.6; }
+.footer-grid ul li a:hover { opacity: 1; color: var(--azure-blue); }
+
 @media (max-width: 900px) {
     .workspace { grid-template-columns: 1fr; }
     .hero h1 { font-size: 3.2rem; }
     nav { display: none; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
 @media (max-width: 600px) {
     .hero { padding: 80px 0; }
     .hero h1 { font-size: 2.6rem; }
-    .tool-tab { padding: 10px 20px; font-size: 0.9rem; }
-    textarea { padding: 24px; min-height: 400px; }
-    .score-circle { width: 110px; height: 110px; font-size: 1.6rem; }
+    .contact-card { padding: 40px 20px; }
+    .contact-email { font-size: 1.1rem; }
 }
