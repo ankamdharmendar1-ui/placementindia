@@ -3,6 +3,11 @@
   "name": "quetext-in",
   "builds": [
     { "src": "index.html", "use": "@vercel/static" },
+    { "src": "about.html", "use": "@vercel/static" },
+    { "src": "privacy-policy.html", "use": "@vercel/static" },
+    { "src": "terms.html", "use": "@vercel/static" },
+    { "src": "disclaimer.html", "use": "@vercel/static" },
+    { "src": "contact.html", "use": "@vercel/static" },
     { "src": "app.js", "use": "@vercel/static" },
     { "src": "index.css", "use": "@vercel/static" },
     { "src": "favicon.png", "use": "@vercel/static" },

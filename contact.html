@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Quetext.in</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .content-page { padding: 120px 0; }
+        .content-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .content-container h1 { font-size: 3.5rem; margin-bottom: 40px; color: var(--black); }
+        .content-container p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.8; }
+        .contact-form { background: var(--white); padding: 40px; border-radius: 32px; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.05); margin-top: 40px; }
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--black); }
+        .form-group input, .form-group textarea { width: 100%; padding: 16px; border-radius: 12px; border: 1px solid var(--border); background: var(--soft-lavender); outline: none; font-family: inherit; font-size: 1rem; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-dot">Q</span>
+                <span>Quetext.in</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#tools">Plagiarism Checker</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#tools">Free Forever</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#tools" class="btn btn-primary">Start Free</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <div class="content-container">
+            <h1>Contact Us</h1>
+            <p>Have questions about our technology, pricing, or need support? Fill out the form below or email us directly.</p>
+            
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+            
+            <div style="margin-top: 60px; text-align: center;">
+                <p>Direct Email: <a href="mailto:support@quetext.in" style="color: var(--royal-blue); font-weight: 700;">support@quetext.in</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer" style="background: var(--black); color: white; padding: 80px 0 40px;">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0; border-top: none;">
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </div>
+                <p>&copy; 2026 Quetext.in. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
