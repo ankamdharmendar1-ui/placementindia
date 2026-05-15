@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const API_BASE = "/api"; // Works automatically on Vercel
+    const API_BASE = "/_/backend/api"; // Matches your dashboard's routePrefix
     const AI_SERVICE_BASE = "http://localhost:8000/scan"; // Still needs a live URL for the AI Service
 
     async function runApiAiDetect(text) {
