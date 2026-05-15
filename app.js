@@ -167,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const API_BASE = "http://localhost:5000/api"; // Main Backend (Plagiarism, AI, Grammar)
-    const AI_SERVICE_BASE = "http://localhost:8000/scan"; // AI Service (DeepSearch)
+    const API_BASE = "/api"; // Works automatically on Vercel
+    const AI_SERVICE_BASE = "http://localhost:8000/scan"; // Still needs a live URL for the AI Service
 
     async function runApiAiDetect(text) {
         const response = await fetch(`${API_BASE}/ai-detect/detect`, {
