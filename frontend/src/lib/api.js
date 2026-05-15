@@ -79,3 +79,23 @@ export const getReport = async (id) => {
     throw error;
   }
 };
+
+export const detectAI = async (text) => {
+  try {
+    const response = await axios.post(`${API_BASE}/ai/detect`, { text });
+    return response.data;
+  } catch (error) {
+    console.error('AI detection failed:', error);
+    throw error;
+  }
+};
+
+export const paraphraseText = async (text, style) => {
+  try {
+    const response = await axios.post(`${API_BASE}/paraphrase/rephrase`, { text, style });
+    return response.data.paraphrased;
+  } catch (error) {
+    console.error('Paraphrase failed:', error);
+    throw error;
+  }
+};
