@@ -76,6 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
     }
 
+    async function runApiGrammar(text) {
+        const response = await fetch(`${API_BASE}/grammar/check`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text })
+        });
+        if (!response.ok) throw new Error("Grammar check failed.");
+        return response.json();
+    }
+
     scanBtn.addEventListener("click", async () => {
         const text = textInput.value.trim();
         if (!text) {
@@ -104,8 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateUIResults(data.ai_score, []);
                 setStatus(`AI analysis complete! Confidence: ${data.ai_score}%`, "success");
             } else if (activeTool === "grammar") {
-                setStatus("Grammar checker is analyzing your text...", "success");
-                // Grammar logic would go here
+                const data = await runApiGrammar(text);
+                setStatus(`Grammar check complete! Found ${data.issues.length} issues.`, "success");
+                updateUIResults(0, []); // Reset score circle for grammar
             }
         } catch (error) {
             setStatus(`Error: ${error.message}`, "error");
