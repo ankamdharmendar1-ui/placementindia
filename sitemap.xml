@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://www.quetext.in/</loc>
+    <loc>https://quetext.in/</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
   
   <!-- Tools Hub -->
   <url>
-    <loc>https://www.quetext.in/tools</loc>
+    <loc>https://quetext.in/tools</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -18,37 +18,37 @@
   
   <!-- Tool Pages -->
   <url>
-    <loc>https://www.quetext.in/plagiarism-checker</loc>
+    <loc>https://quetext.in/plagiarism-checker</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.quetext.in/ai-content-detector</loc>
+    <loc>https://quetext.in/ai-content-detector</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.quetext.in/grammar-checker</loc>
+    <loc>https://quetext.in/grammar-checker</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.quetext.in/paraphrasing-tool</loc>
+    <loc>https://quetext.in/paraphrasing-tool</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.quetext.in/sentence-rewriter</loc>
+    <loc>https://quetext.in/sentence-rewriter</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.quetext.in/word-counter</loc>
+    <loc>https://quetext.in/word-counter</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -56,30 +56,25 @@
   
   <!-- Other Important Pages -->
   <url>
-    <loc>https://www.quetext.in/about</loc>
+    <loc>https://quetext.in/about</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.quetext.in/contact</loc>
+    <loc>https://quetext.in/contact</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.quetext.in/</loc>
-    <lastmod>2026-04-24</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.quetext.in/privacy</loc>
+    <loc>https://quetext.in/privacy</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.quetext.in/terms</loc>
+    <loc>https://quetext.in/terms</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
