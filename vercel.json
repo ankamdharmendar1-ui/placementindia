@@ -1,13 +1,17 @@
 {
-  "experimentalServices": {
-    "frontend": {
-      "entrypoint": "frontend",
-      "routePrefix": "/",
-      "framework": "vite"
-    },
-    "backend": {
-      "entrypoint": "backend",
-      "routePrefix": "/_/backend"
-    }
-  }
+  "version": 2,
+  "name": "quetext-in",
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "app.js", "use": "@vercel/static" },
+    { "src": "index.css", "use": "@vercel/static" },
+    { "src": "favicon.png", "use": "@vercel/static" },
+    { "src": "robots.txt", "use": "@vercel/static" },
+    { "src": "sitemap.xml", "use": "@vercel/static" },
+    { "src": "backend/index.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/_/backend/api/(.*)", "dest": "backend/index.js" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
 }
