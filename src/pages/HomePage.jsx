@@ -82,14 +82,32 @@ export default function HomePage() {
       </section>
 
       {/* ── Tools Grid ───────────────────────────────── */}
-      <section className="py-20 section-appear">
-        <div className="text-center mb-14">
-          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Our Tools</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-4">Everything You Need</h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-lg">One platform. All the writing tools. Completely free.</p>
+      <section className="py-10 md:py-20 section-appear">
+        <div className="text-center mb-8 md:mb-14">
+          <span className="text-indigo-600 font-semibold text-xs md:text-sm uppercase tracking-widest">Our Tools</span>
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900 mt-2 mb-2 md:mb-4">Everything You Need</h2>
+          <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-lg">One platform. All the writing tools. Completely free.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Mobile: compact 2-col grid */}
+        <div className="grid grid-cols-2 gap-3 md:hidden">
+          {tools.map((tool) => (
+            <Link
+              key={tool.id}
+              to={`/${tool.id}`}
+              className="flex flex-col items-center text-center bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-300 active:scale-95"
+            >
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-xl mb-3 shadow-md`}>
+                {tool.icon}
+              </div>
+              <h3 className="text-sm font-bold text-gray-900 leading-tight mb-1">{tool.name}</h3>
+              <span className="text-xs text-indigo-500 font-medium">Use →</span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop: full cards grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tools.map((tool, i) => (
             <Link
               key={tool.id}
@@ -111,6 +129,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
 
       {/* ── How It Works ─────────────────────────────── */}
       <section className="py-20 section-appear">
