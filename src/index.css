@@ -159,7 +159,7 @@ body {
 
 /* ── Navbar ─────────────────────────────── */
 .navbar-blur {
-  background: rgba(15,12,41,0.85);
+  background: rgba(10, 8, 30, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
