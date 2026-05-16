@@ -16,11 +16,13 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="hidden md:block ml-10">
-              <div className="flex items-baseline space-x-8">
+              <div className="flex items-baseline space-x-4">
                 <Link to="/" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Home</Link>
-                <Link to="/plagiarism" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Plagiarism Checker</Link>
-                <Link to="/ai-detection" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">AI Detection</Link>
-                <Link to="/paraphrase" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Paraphrasing</Link>
+                <Link to="/tools" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">All Tools</Link>
+                <Link to="/plagiarism-checker" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Plagiarism</Link>
+                <Link to="/ai-content-detector" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">AI Detection</Link>
+                <Link to="/paraphrasing-tool" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Paraphrase</Link>
+                <Link to="/grammar-checker" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">Grammar</Link>
                 <Link to="/about" className="px-3 py-2 text-sm font-medium hover:text-blue-200 transition-colors duration-200">About</Link>
               </div>
             </div>
@@ -51,18 +53,18 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-blue-800">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Home</Link>
-            <Link to="/plagiarism" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Plagiarism Checker</Link>
-            <Link to="/ai-detection" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">AI Detection</Link>
-            <Link to="/paraphrase" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Paraphrasing</Link>
-            <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">About</Link>
+            <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/tools" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>All Tools</Link>
+            <Link to="/plagiarism-checker" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>Plagiarism Checker</Link>
+            <Link to="/ai-content-detector" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>AI Detection</Link>
+            <Link to="/paraphrasing-tool" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>Paraphrasing</Link>
+            <Link to="/grammar-checker" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>Grammar Checker</Link>
+            <Link to="/sentence-rewriter" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>Sentence Rewriter</Link>
+            <Link to="/word-counter" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>Word Counter</Link>
+            <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </div>
           <div className="pt-4 pb-3 border-t border-blue-700">
-            <div className="flex items-center px-5">
-              <div className="ml-3">
-                <div className="text-base font-medium">Guest User</div>
-              </div>
-            </div>
             <div className="mt-3 px-2 space-y-1">
               <button className="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Log In</button>
               <button className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-blue-600">Sign Up</button>
