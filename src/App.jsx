@@ -20,9 +20,9 @@ import DisclaimerPage from './pages/DisclaimerPage';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-slate-50">
         <Navbar />
-        <div className="flex-grow container mx-auto px-4 py-8">
+        <div className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/tools" element={<ToolsHubPage />} />
@@ -39,7 +39,6 @@ function App() {
             <Route path="/disclaimer" element={<DisclaimerPage />} />
           </Routes>
         </div>
-
         <Footer />
         <CookieConsent />
       </div>

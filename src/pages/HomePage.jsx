@@ -1,154 +1,188 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+const tools = [
+  { id: 'plagiarism-checker',    name: 'Plagiarism Checker',    icon: '🔍', desc: 'Scan billions of sources and detect copied content instantly.',            color: 'from-violet-500 to-purple-600' },
+  { id: 'ai-content-detector',   name: 'AI Content Detector',   icon: '🤖', desc: 'Identify ChatGPT and AI-generated text with high accuracy.',               color: 'from-blue-500 to-cyan-500' },
+  { id: 'grammar-checker',       name: 'Grammar Checker',       icon: '✏️', desc: 'Fix grammatical errors and improve your writing quality effortlessly.',    color: 'from-emerald-500 to-teal-500' },
+  { id: 'paraphrasing-tool',     name: 'Paraphrasing Tool',     icon: '🔄', desc: 'Rephrase any text while preserving its original meaning perfectly.',       color: 'from-orange-500 to-amber-500' },
+  { id: 'sentence-rewriter',     name: 'Sentence Rewriter',     icon: '📝', desc: 'Rewrite sentences for better clarity and improved structure.',             color: 'from-pink-500 to-rose-500' },
+  { id: 'word-counter',          name: 'Word Counter',          icon: '🔢', desc: 'Instantly count words, characters, sentences, and reading time.',          color: 'from-indigo-500 to-blue-600' },
+];
+
+const stats = [
+  { value: '10M+', label: 'Documents Checked' },
+  { value: '99%',  label: 'Accuracy Rate' },
+  { value: '150+', label: 'Countries Served' },
+  { value: 'Free', label: 'No Sign-up Required' },
+];
+
+function useScrollAnimation() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.section-appear').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+}
+
 export default function HomePage() {
+  const [hovered, setHovered] = useState(null);
+  useScrollAnimation();
+
   return (
-    <div className="max-w-7xl mx-auto">
-      {/* Hero Section */}
-      <section className="py-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Plagiarism Checker</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-          The most accurate plagiarism checker that finds copied content and helps prevent academic dishonesty
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link 
-            to="/plagiarism"
-            className="px-8 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-300"
-          >
-            Check for Plagiarism
-          </Link>
-          <button className="px-8 py-4 bg-white text-blue-600 font-medium border border-blue-600 rounded-lg hover:bg-blue-50 transition duration-300">
-            Learn More
-          </button>
+    <div className="max-w-7xl mx-auto overflow-x-hidden">
+
+      {/* ── Hero ─────────────────────────────────────── */}
+      <section className="relative py-28 text-center overflow-hidden rounded-3xl my-8 hero-gradient">
+        {/* Floating orbs */}
+        <div className="orb w-96 h-96 bg-purple-600 top-[-100px] left-[-80px]" style={{animationDelay:'0s'}} />
+        <div className="orb w-72 h-72 bg-blue-500  bottom-[-60px] right-[-60px]" style={{animationDelay:'2s'}} />
+        <div className="orb w-48 h-48 bg-cyan-400   top-20 right-32"              style={{animationDelay:'4s'}} />
+
+        <div className="relative z-10 px-4">
+          <div className="inline-flex items-center gap-2 glass text-white text-sm font-medium px-4 py-2 rounded-full mb-8 animate-fade-in">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            Free AI-Powered Writing Tools
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight animate-fade-in-up">
+            Write Smarter,<br />
+            <span className="text-gradient">Not Harder</span>
+          </h1>
+
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
+            Plagiarism checker, AI detector, grammar fixer, paraphraser — everything you need to create original, high-quality content.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+            <Link to="/plagiarism-checker" className="btn-shimmer text-white font-bold px-8 py-4 rounded-xl text-lg shadow-xl">
+              🔍 Check Plagiarism Free
+            </Link>
+            <Link to="/tools" className="glass text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white/20 transition-all duration-300">
+              View All Tools →
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-3xl mx-auto animate-fade-in-up delay-400">
+            {stats.map((s, i) => (
+              <div key={i} className="stat-card">
+                <div className="text-3xl font-black text-white">{s.value}</div>
+                <div className="text-gray-400 text-sm mt-1">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Our Plagiarism Checker?</h2>
+      {/* ── Tools Grid ───────────────────────────────── */}
+      <section className="py-20 section-appear">
+        <div className="text-center mb-14">
+          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Our Tools</span>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-4">Everything You Need</h2>
+          <p className="text-gray-500 max-w-xl mx-auto text-lg">One platform. All the writing tools. Completely free.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {tools.map((tool, i) => (
+            <Link
+              key={tool.id}
+              to={`/${tool.id}`}
+              className="tool-card group"
+              style={{ animationDelay: `${i * 0.1}s` }}
+              onMouseEnter={() => setHovered(tool.id)}
+              onMouseLeave={() => setHovered(null)}
+            >
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-2xl mb-5 shadow-lg transition-transform duration-300 group-hover:scale-110`}>
+                {tool.icon}
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{tool.desc}</p>
+              <div className="mt-5 flex items-center text-indigo-600 font-semibold text-sm group-hover:gap-3 transition-all duration-300 gap-1">
+                Use Tool <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── How It Works ─────────────────────────────── */}
+      <section className="py-20 section-appear">
+        <div className="text-center mb-14">
+          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Simple Process</span>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">How It Works</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+          {[
+            { step: '01', title: 'Paste Your Text',   desc: 'Copy and paste your content into the tool',         icon: '📋' },
+            { step: '02', title: 'Click Analyze',     desc: 'Our AI scans your text instantly',                  icon: '⚡' },
+            { step: '03', title: 'Get Results',       desc: 'View a detailed, color-coded report',               icon: '📊' },
+            { step: '04', title: 'Fix & Improve',     desc: 'Apply suggestions and ensure originality',          icon: '✅' },
+          ].map((item, i) => (
+            <div key={i} className="text-center group">
+              <div className="relative inline-block mb-6">
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-3xl shadow-lg mx-auto transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  {item.icon}
+                </div>
+                <span className="absolute -top-3 -right-3 w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full text-xs font-black flex items-center justify-center">
+                  {item.step}
+                </span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-gray-500 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Why Choose Us ────────────────────────────── */}
+      <section className="py-20 section-appear">
+        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-10 md:p-16">
+          <div className="text-center mb-14">
+            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Why Quetext.in</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">Built for Quality</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-blue-600 text-4xl mb-4">✓</div>
-              <h3 className="text-xl font-bold mb-3">Deep Search Technology</h3>
-              <p className="text-gray-600">Scans billions of web pages and academic papers to find potential matches.</p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-blue-600 text-4xl mb-4">✓</div>
-              <h3 className="text-xl font-bold mb-3">AI-Powered Analysis</h3>
-              <p className="text-gray-600">Advanced algorithms detect paraphrased content and subtle similarities.</p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-blue-600 text-4xl mb-4">✓</div>
-              <h3 className="text-xl font-bold mb-3">Detailed Reports</h3>
-              <p className="text-gray-600">Get comprehensive reports with highlighted matches and source links.</p>
+            {[
+              { icon: '🚀', title: 'Lightning Fast',    desc: 'Get results in seconds, not minutes. Our optimized engine processes thousands of words instantly.' },
+              { icon: '🎯', title: '99% Accuracy',      desc: 'Advanced NLP algorithms ensure you get the most accurate results in detecting plagiarism and AI content.' },
+              { icon: '🔒', title: 'Privacy First',     desc: 'Your documents are never stored permanently or shared. We respect your privacy completely.' },
+            ].map((item, i) => (
+              <div key={i} className="glass-card rounded-2xl p-8 text-center">
+                <div className="text-5xl mb-5 animate-float" style={{animationDelay:`${i}s`}}>{item.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ──────────────────────────────────────── */}
+      <section className="py-20 section-appear">
+        <div className="relative hero-gradient rounded-3xl p-12 md:p-20 text-center overflow-hidden">
+          <div className="orb w-80 h-80 bg-purple-500 top-[-60px] right-[-60px]" style={{animationDelay:'1s'}} />
+          <div className="orb w-64 h-64 bg-cyan-500 bottom-[-40px] left-[-40px]"  style={{animationDelay:'3s'}} />
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Ready to Write Better?</h2>
+            <p className="text-gray-300 text-xl max-w-2xl mx-auto mb-10">
+              Join over 10 million users who trust Quetext.in for their writing needs. No sign-up required.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/plagiarism-checker" className="btn-shimmer text-white font-bold px-10 py-4 rounded-xl text-lg shadow-xl">
+                Start for Free
+              </Link>
+              <Link to="/tools" className="glass text-white font-semibold px-10 py-4 rounded-xl text-lg hover:bg-white/20 transition-all duration-300">
+                Explore Tools
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
-              <h3 className="text-xl font-bold mb-2">Paste Text</h3>
-              <p className="text-gray-600">Copy and paste your content into our checker</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
-              <h3 className="text-xl font-bold mb-2">Scan Document</h3>
-              <p className="text-gray-600">Our system scans billions of sources</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
-              <h3 className="text-xl font-bold mb-2">Get Results</h3>
-              <p className="text-gray-600">Receive a detailed plagiarism report</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
-              <h3 className="text-xl font-bold mb-2">Make Corrections</h3>
-              <p className="text-gray-600">Fix issues and ensure originality</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Detailed Info Section */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Comprehensive Writing Solutions for Everyone</h2>
-          <div className="prose prose-lg max-w-none text-gray-600">
-            <p className="mb-6">
-              In today's digital age, content originality is more important than ever. Whether you're a student 
-              working on a thesis, a professional writer creating web content, or a business owner ensuring 
-              brand integrity, <strong>Quetext.in</strong> provides the tools you need to succeed.
-            </p>
-            <p className="mb-6">
-              Our platform goes beyond simple word matching. We use advanced Natural Language Processing (NLP) 
-              to understand the context and structure of your writing. This allows us to detect not just exact 
-              matches, but also paraphrased content and AI-generated text that other tools might miss.
-            </p>
-            
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">Why Academic Integrity Matters</h3>
-            <p className="mb-6">
-              Academic honesty is the foundation of education. Using a plagiarism checker helps students 
-              identify unintentional citation errors and ensures that their work is a true reflection of 
-              their own knowledge and effort. Educators can use our tools to maintain high standards 
-              in the classroom and promote a culture of original thinking.
-            </p>
-
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">Optimizing Content for Search Engines</h3>
-            <p className="mb-6">
-              For web writers and SEO professionals, original content is the key to ranking high on search 
-              engines. Duplicate content can lead to search engine penalties and lower visibility. By 
-              using Quetext.in, you can ensure your content is unique, helping you build authority 
-              and reach a wider audience.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold mb-2">How accurate is the plagiarism checker?</h3>
-              <p className="text-gray-600">Our tool uses deep-search technology to scan billions of web pages and academic databases, providing highly accurate results with detailed reports.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold mb-2">Can it detect AI-generated content?</h3>
-              <p className="text-gray-600">Yes, we have a dedicated AI Content Detector that uses sophisticated algorithms to identify text generated by ChatGPT, GPT-4, and other AI models.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold mb-2">Is my data safe with Quetext.in?</h3>
-              <p className="text-gray-600">We prioritize your privacy. Your documents are processed securely and are not stored permanently or shared with third parties.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold mb-2">Is the tool free to use?</h3>
-              <p className="text-gray-600">We offer both free and premium versions of our tools. The free version provides essential checks, while premium offers more advanced features and higher limits.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white text-center rounded-xl my-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Check Your Work?</h2>
-        <p className="text-xl max-w-3xl mx-auto mb-10">
-          Join thousands of students, teachers, and professionals who trust our plagiarism checker
-        </p>
-        <Link 
-          to="/plagiarism-checker"
-          className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition duration-300"
-        >
-          Start Free Check
-        </Link>
-      </section>
     </div>
   );
 }
