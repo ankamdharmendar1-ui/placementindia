@@ -217,3 +217,67 @@ body {
 ::-webkit-scrollbar-track { background: #f1f1f1; }
 ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
+
+/* ── Mobile: reduce animations ───────────── */
+@media (max-width: 768px) {
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-5px); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Shrink orbs on mobile */
+  .orb {
+    filter: blur(40px);
+    opacity: 0.25;
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  /* Reduce tool card lift */
+  .tool-card:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Reduce glass card lift */
+  .glass-card:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Reduce btn bounce */
+  .btn-gradient:hover,
+  .btn-shimmer:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Shorten animation durations */
+  .animate-fade-in-up { animation-duration: 0.4s; }
+  .animate-fade-in    { animation-duration: 0.3s; }
+  .animate-float      { animation-duration: 4s; }
+  .animate-scale-in   { animation-duration: 0.3s; }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .orb { display: none; }
+}
+

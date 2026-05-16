@@ -36,42 +36,45 @@ export default function HomePage() {
     <div className="max-w-7xl mx-auto overflow-x-hidden">
 
       {/* ── Hero ─────────────────────────────────────── */}
-      <section className="relative py-28 text-center overflow-hidden rounded-3xl my-8 hero-gradient">
-        {/* Floating orbs */}
-        <div className="orb w-96 h-96 bg-purple-600 top-[-100px] left-[-80px]" style={{animationDelay:'0s'}} />
-        <div className="orb w-72 h-72 bg-blue-500  bottom-[-60px] right-[-60px]" style={{animationDelay:'2s'}} />
-        <div className="orb w-48 h-48 bg-cyan-400   top-20 right-32"              style={{animationDelay:'4s'}} />
+      <section className="relative py-16 md:py-28 text-center overflow-hidden rounded-2xl md:rounded-3xl my-4 md:my-8 hero-gradient">
+        {/* Floating orbs - hidden on mobile for performance */}
+        <div className="orb w-96 h-96 bg-purple-600 top-[-100px] left-[-80px] hidden md:block" style={{animationDelay:'0s'}} />
+        <div className="orb w-72 h-72 bg-blue-500  bottom-[-60px] right-[-60px] hidden md:block" style={{animationDelay:'2s'}} />
+        <div className="orb w-48 h-48 bg-cyan-400   top-20 right-32 hidden md:block"              style={{animationDelay:'4s'}} />
+        {/* Small orbs for mobile */}
+        <div className="orb bg-purple-600 top-0 left-0 md:hidden" style={{animationDelay:'0s'}} />
+        <div className="orb bg-cyan-500 bottom-0 right-0 md:hidden" style={{animationDelay:'2s'}} />
 
         <div className="relative z-10 px-4">
-          <div className="inline-flex items-center gap-2 glass text-white text-sm font-medium px-4 py-2 rounded-full mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 glass text-white text-xs md:text-sm font-medium px-3 md:px-4 py-1.5 md:py-2 rounded-full mb-6 md:mb-8 animate-fade-in">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             Free AI-Powered Writing Tools
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight animate-fade-in-up">
+          <h1 className="text-4xl md:text-7xl font-black text-white mb-4 md:mb-6 leading-tight animate-fade-in-up">
             Write Smarter,<br />
             <span className="text-gradient">Not Harder</span>
           </h1>
 
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
+          <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 md:mb-10 animate-fade-in-up delay-200">
             Plagiarism checker, AI detector, grammar fixer, paraphraser — everything you need to create original, high-quality content.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
-            <Link to="/plagiarism-checker" className="btn-shimmer text-white font-bold px-8 py-4 rounded-xl text-lg shadow-xl">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center animate-fade-in-up delay-300">
+            <Link to="/plagiarism-checker" className="btn-shimmer text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg shadow-xl">
               🔍 Check Plagiarism Free
             </Link>
-            <Link to="/tools" className="glass text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white/20 transition-all duration-300">
+            <Link to="/tools" className="glass text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg hover:bg-white/20 transition-all duration-300">
               View All Tools →
             </Link>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-3xl mx-auto animate-fade-in-up delay-400">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-10 md:mt-16 max-w-3xl mx-auto animate-fade-in-up delay-400">
             {stats.map((s, i) => (
               <div key={i} className="stat-card">
-                <div className="text-3xl font-black text-white">{s.value}</div>
-                <div className="text-gray-400 text-sm mt-1">{s.label}</div>
+                <div className="text-2xl md:text-3xl font-black text-white">{s.value}</div>
+                <div className="text-gray-400 text-xs md:text-sm mt-1">{s.label}</div>
               </div>
             ))}
           </div>
