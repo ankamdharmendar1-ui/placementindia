@@ -55,6 +55,7 @@ export default function Navbar() {
           {/* Right Side */}
           <div className="hidden md:flex items-center gap-3">
             <Link to="/about" className="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300">About</Link>
+            <Link to="/contact" className="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300">Contact</Link>
             <Link to="/plagiarism-checker" className="btn-shimmer text-white font-semibold px-5 py-2 rounded-lg text-sm shadow-lg">
               Try Free →
             </Link>

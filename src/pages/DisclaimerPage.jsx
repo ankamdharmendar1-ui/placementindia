@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from '../lib/seoHelper';
+import { SUPPORT_EMAIL } from '../lib/siteConfig';
 
 const DisclaimerPage = () => {
   return (
@@ -7,13 +8,14 @@ const DisclaimerPage = () => {
       <SEO 
         title="Disclaimer | Quetext.in" 
         description="Read the disclaimer for Quetext.in regarding tool accuracy, liability, and usage."
+        url="/disclaimer"
       />
       <h1 className="text-4xl font-bold mb-8 text-blue-900">Disclaimer</h1>
       
       <div className="prose prose-lg max-w-none text-gray-700">
         <p className="mb-6">
           If you require any more information or have any questions about our site's disclaimer, 
-          please feel free to contact us by email at support@quetext.in.
+          please feel free to contact us by email at {SUPPORT_EMAIL}.
         </p>
 
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">Disclaimers for Quetext.in</h2>

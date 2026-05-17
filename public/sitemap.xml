@@ -81,7 +81,13 @@
   </url>
   <url>
     <loc>https://quetext.in/disclaimer</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://quetext.in/cookie-policy</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

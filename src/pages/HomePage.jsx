@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../lib/seoHelper';
+import AdPlacement from '../components/AdPlacement';
+import { AD_SLOTS } from '../lib/siteConfig';
 
 const tools = [
   { id: 'plagiarism-checker',    name: 'Plagiarism Checker',    icon: '🔍', desc: 'Scan billions of sources and detect copied content instantly.',            color: 'from-violet-500 to-purple-600' },
@@ -34,6 +37,11 @@ export default function HomePage() {
 
   return (
     <div className="max-w-7xl mx-auto overflow-x-hidden">
+      <SEO
+        title="Quetext.in - Free Plagiarism Checker, AI Detector & Writing Tools"
+        description="Free online plagiarism checker, AI content detector, grammar checker, and paraphrasing tools. No sign-up required."
+        url="/"
+      />
 
       {/* ── Hero ─────────────────────────────────────── */}
       <section className="relative py-16 md:py-28 text-center overflow-hidden rounded-2xl md:rounded-3xl my-4 md:my-8 hero-gradient">
@@ -130,6 +138,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      <div className="px-4">
+        <AdPlacement slot={AD_SLOTS.homeMid} className="max-w-3xl mx-auto" />
+      </div>
 
       {/* ── How It Works ─────────────────────────────── */}
       <section className="py-20 section-appear">
@@ -179,6 +190,24 @@ export default function HomePage() {
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trust / Legal (AdSense) ───────────────── */}
+      <section className="py-16 px-4 section-appear">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Transparent &amp; Trustworthy</h2>
+          <p className="text-gray-600 mb-8">
+            Quetext.in is operated with clear policies. We provide free writing tools supported by advertising.
+            Read our policies or contact us anytime.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/about" className="px-5 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-indigo-400 hover:text-indigo-600 transition">About Us</Link>
+            <Link to="/contact" className="px-5 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-indigo-400 hover:text-indigo-600 transition">Contact</Link>
+            <Link to="/privacy-policy" className="px-5 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-indigo-400 hover:text-indigo-600 transition">Privacy Policy</Link>
+            <Link to="/terms" className="px-5 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-indigo-400 hover:text-indigo-600 transition">Terms</Link>
+            <Link to="/cookie-policy" className="px-5 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-indigo-400 hover:text-indigo-600 transition">Cookie Policy</Link>
           </div>
         </div>
       </section>

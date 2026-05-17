@@ -31,6 +31,11 @@ const AIDetectionPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <SEO
+        title="AI Content Detector | Detect ChatGPT & AI Text | Quetext.in"
+        description="Identify AI-generated content with our free AI detector. Check text from ChatGPT, GPT-4, and other LLMs."
+        url="/ai-content-detector"
+      />
       <h1 className="text-3xl font-bold mb-6">AI Content Detection</h1>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -80,11 +85,6 @@ const AIDetectionPage = () => {
 
       {/* Content Section for SEO and AdSense */}
       <div className="mt-16 max-w-4xl mx-auto">
-        <SEO 
-          title="AI Content Detector | Detect ChatGPT & GPT-4 Text | Quetext"
-          description="Identify AI-generated content with our advanced detector. High accuracy for ChatGPT, GPT-4, and other LLMs."
-        />
-        
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">How AI Detection Works</h2>
           <p className="text-gray-700 mb-4">

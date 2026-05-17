@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SEO from '../lib/seoHelper';
+import { SUPPORT_EMAIL } from '../lib/siteConfig';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -29,6 +30,7 @@ const ContactPage = () => {
       <SEO 
         title="Contact Us | Quetext.in" 
         description="Have questions or feedback? Contact the Quetext.in team today. We're here to help you with your writing tools."
+        url="/contact"
       />
       <h1 className="text-4xl font-bold mb-8 text-blue-900 text-center">Contact Us</h1>
       
@@ -49,7 +51,9 @@ const ContactPage = () => {
               </div>
               <div>
                 <p className="font-medium">Email</p>
-                <p className="text-gray-600">support@quetext.in</p>
+                <p className="text-gray-600">
+                  <a href={`mailto:${SUPPORT_EMAIL}`} className="text-blue-600 hover:underline">{SUPPORT_EMAIL}</a>
+                </p>
               </div>
             </div>
             

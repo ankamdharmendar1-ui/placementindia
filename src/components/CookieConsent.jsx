@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SITE_NAME } from '../lib/siteConfig';
-
-const CONSENT_KEY = 'cookie-consent';
+import { CONSENT_KEY, notifyConsentChange } from '../lib/adConsent';
 
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,6 +13,7 @@ export default function CookieConsent() {
 
   const saveConsent = (value) => {
     localStorage.setItem(CONSENT_KEY, value);
+    notifyConsentChange();
     setIsVisible(false);
   };
 
@@ -44,7 +44,7 @@ export default function CookieConsent() {
             Essential Only
           </button>
         </div>
-      </motion>
+      </div>
     </div>
   );
 }

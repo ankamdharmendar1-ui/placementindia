@@ -7,6 +7,7 @@ const TermsPage = () => {
       <SEO 
         title="Terms of Service | Quetext.in" 
         description="Review the terms and conditions for using Quetext.in writing and academic tools."
+        url="/terms"
       />
       <h1 className="text-4xl font-bold mb-8 text-blue-900">Terms of Service</h1>
       
@@ -61,7 +62,14 @@ const TermsPage = () => {
           by our tools are 100% accurate or complete. Users should verify results independently.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">7. Governing Law</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">7. Advertising</h2>
+        <p className="mb-6">
+          Quetext.in displays third-party advertisements through Google AdSense. By using our website, you
+          acknowledge that ads may be shown and that Google may use cookies to personalize or measure ads.
+          See our Privacy Policy and Cookie Policy for details on how advertising data is handled.
+        </p>
+
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">8. Governing Law</h2>
         <p className="mb-6">
           These Terms will be governed by and interpreted in accordance with the laws of India, and you 
           submit to the non-exclusive jurisdiction of the state and federal courts located in India for 

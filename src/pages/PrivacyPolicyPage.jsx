@@ -1,89 +1,102 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../lib/seoHelper';
+import { SITE_NAME, SITE_URL, SUPPORT_EMAIL, ADSENSE_PUBLISHER_ID } from '../lib/siteConfig';
 
 const PrivacyPolicyPage = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <SEO 
-        title="Privacy Policy | Quetext.in" 
-        description="Read the Privacy Policy of Quetext.in to understand how we collect, use, and protect your data."
+      <SEO
+        title={`Privacy Policy | ${SITE_NAME}`}
+        description={`Read how ${SITE_NAME} collects, uses, and protects your data, including information about Google AdSense advertising.`}
+        url="/privacy-policy"
       />
       <h1 className="text-4xl font-bold mb-8 text-blue-900">Privacy Policy</h1>
-      
+
       <div className="prose prose-lg max-w-none text-gray-700">
-        <p className="mb-4">Last Updated: May 15, 2026</p>
-        
+        <p className="mb-4">Last Updated: May 16, 2026</p>
+
         <p className="mb-6">
-          At Quetext.in, accessible from https://quetext.in, one of our main priorities is the privacy of our visitors. 
-          This Privacy Policy document contains types of information that is collected and recorded by Quetext.in 
-          and how we use it.
+          At {SITE_NAME}, accessible from {SITE_URL}, we respect your privacy. This Privacy Policy explains
+          what information we collect, how we use it, and your rights when using our free writing tools.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">1. Log Files</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">1. Information We Collect</h2>
         <p className="mb-6">
-          Quetext.in follows a standard procedure of using log files. These files log visitors when they visit websites. 
-          All hosting companies do this and a part of hosting services' analytics. The information collected by log 
-          files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time 
-          stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information 
-          that is personally identifiable.
+          We may collect information you provide directly (such as name and email when contacting us),
+          text you submit to our tools for processing, and automatically collected data such as IP address,
+          browser type, device type, pages visited, and referring URLs through standard server logs and cookies.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">2. Cookies and Web Beacons</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">2. How We Use Your Information</h2>
+        <ul className="list-disc pl-6 mb-6 space-y-2">
+          <li>To provide and improve our plagiarism, grammar, and other writing tools.</li>
+          <li>To respond to support requests and contact form messages.</li>
+          <li>To analyze site usage and fix technical issues.</li>
+          <li>To display advertisements through Google AdSense.</li>
+        </ul>
+
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">3. Cookies and Web Beacons</h2>
         <p className="mb-6">
-          Like any other website, Quetext.in uses 'cookies'. These cookies are used to store information including 
-          visitors' preferences, and the pages on the website that the visitor accessed or visited. The information 
-          is used to optimize the users' experience by customizing our web page content based on visitors' browser 
-          type and/or other information.
+          Like most websites, we use cookies to store preferences, measure traffic, and support advertising.
+          For details, see our <Link to="/cookie-policy" className="text-blue-600 hover:underline">Cookie Policy</Link>.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">3. Google DoubleClick DART Cookie</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">4. Google AdSense &amp; Advertising</h2>
         <p className="mb-6">
-          Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve 
-          ads to our site visitors based upon their visit to www.website.com and other sites on the internet. 
-          However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content 
-          network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads" className="text-blue-600 hover:underline">https://policies.google.com/technologies/ads</a>
+          We use <strong>Google AdSense</strong> (Publisher ID: {ADSENSE_PUBLISHER_ID}) to serve ads on {SITE_URL}.
+          Google and its partners may use cookies (including the DART cookie) to serve ads based on your visits
+          to this site and other sites on the Internet. You may opt out of personalized advertising by visiting{' '}
+          <a href="https://policies.google.com/technologies/ads" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+            Google&apos;s Advertising Technologies
+          </a>{' '}
+          or{' '}
+          <a href="https://www.google.com/settings/ads" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+            Google Ads Settings
+          </a>.
+        </p>
+        <p className="mb-6">
+          Third-party vendors, including Google, use cookies to serve ads. {SITE_NAME} does not control cookies
+          placed by third-party advertisers. Consult their privacy policies for more information.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">4. Advertising Partners Privacy Policies</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">5. User Content (Text Submitted to Tools)</h2>
         <p className="mb-6">
-          Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are 
-          used in their respective advertisements and links that appear on Quetext.in, which are sent directly to 
-          users' browser. They automatically receive your IP address when this occurs. These technologies are used 
-          to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content 
-          that you see on websites that you visit.
-        </p>
-        <p className="mb-6">
-          Note that Quetext.in has no access to or control over these cookies that are used by third-party advertisers.
+          When you use our plagiarism checker, AI detector, or other tools, your text is processed to deliver
+          results. We do not claim ownership of your content. We do not sell your submitted text. Text is not
+          stored longer than necessary to provide the service, and we do not add your documents to a public database.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">5. Third Party Privacy Policies</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">6. Third-Party Services</h2>
         <p className="mb-6">
-          Quetext.in's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you 
-          to consult the respective Privacy Policies of these third-party ad servers for more detailed information. 
-          It may include their practices and instructions about how to opt-out of certain options.
+          Our site may link to external websites. We are not responsible for the privacy practices of third-party
+          sites. This policy applies only to {SITE_URL}.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">6. User Content</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">7. Children&apos;s Privacy</h2>
         <p className="mb-6">
-          When you use our plagiarism checker or other tools, the text you input is processed to provide the service. 
-          We do not claim ownership of your content. We do not share your text with third parties except as required 
-          to perform the check or by law.
+          {SITE_NAME} does not knowingly collect personal information from children under 13. If you believe
+          a child has provided us personal data, contact us at {SUPPORT_EMAIL} and we will delete it promptly.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">7. Children's Information</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">8. Your Rights</h2>
         <p className="mb-6">
-          Another part of our priority is adding protection for children while using the internet. We encourage 
-          parents and guardians to observe, participate in, and/or monitor and guide their online activity.
-        </p>
-        <p className="mb-6">
-          Quetext.in does not knowingly collect any Personal Identifiable Information from children under the age of 13. 
-          If you think that your child provided this kind of information on our website, we strongly encourage you to 
-          contact us immediately and we will do our best efforts to promptly remove such information from our records.
+          Depending on your location, you may have rights to access, correct, or delete personal data we hold.
+          Contact us at <a href={`mailto:${SUPPORT_EMAIL}`} className="text-blue-600 hover:underline">{SUPPORT_EMAIL}</a> to
+          make a request.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-900">8. Consent</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">9. Changes to This Policy</h2>
         <p className="mb-6">
-          By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+          We may update this Privacy Policy from time to time. Changes will be posted on this page with an
+          updated &quot;Last Updated&quot; date.
+        </p>
+
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900">10. Contact Us</h2>
+        <p className="mb-6">
+          For questions about this Privacy Policy, email{' '}
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="text-blue-600 hover:underline">{SUPPORT_EMAIL}</a> or
+          visit our <Link to="/contact" className="text-blue-600 hover:underline">Contact page</Link>.
         </p>
       </div>
     </div>
