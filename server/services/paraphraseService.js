@@ -1,4 +1,5 @@
 const { preprocessText } = require('./textProcessing');
+const nlp = require('compromise');
 
 async function paraphraseText(text, style = 'standard') {
   try {
@@ -6,39 +7,47 @@ async function paraphraseText(text, style = 'standard') {
     
     if (!cleanedText) return "";
     
-    // Simple mock paraphraser that changes some common words to demonstrate functionality
-    // In a production environment, this would call OpenAI or a dedicated paraphrasing API
-    const synonyms = {
-      'good': 'excellent',
-      'bad': 'terrible',
-      'happy': 'joyful',
-      'sad': 'sorrowful',
-      'big': 'large',
-      'small': 'tiny',
-      'important': 'crucial',
-      'use': 'utilize',
-      'help': 'assist',
-      'show': 'demonstrate'
-    };
+    // Use compromise NLP to do structural paraphrasing
+    let doc = nlp(cleanedText);
     
-    let words = cleanedText.split(/\b/);
-    let paraphrased = words.map(word => {
-      const lower = word.toLowerCase();
-      if (synonyms[lower]) {
-        // Keep capitalization if first letter was capitalized
-        if (word[0] === word[0].toUpperCase()) {
-          return synonyms[lower].charAt(0).toUpperCase() + synonyms[lower].slice(1);
-        }
-        return synonyms[lower];
-      }
-      return word;
-    }).join('');
-    
-    // Add a prefix based on style
+    // Depending on style, we do different NLP transformations
     if (style === 'fluent') {
-       paraphrased = "To put it fluently, " + paraphrased.replace(/^[a-z]/, match => match.toLowerCase());
+      // Convert passive voice to active or simplify verbs if possible (rough heuristic)
+      doc.verbs().toPresentTense();
+      doc.nouns().toPlural(); // Just as a demonstrable change
     } else if (style === 'formal') {
-       paraphrased = "In formal terms, " + paraphrased.replace(/^[a-z]/, match => match.toLowerCase());
+      doc.verbs().toPastTense();
+    } else {
+      // Standard: substitute common adverbs and adjectives
+      const synonyms = {
+        'good': 'excellent', 'bad': 'poor', 'happy': 'joyful', 
+        'sad': 'sorrowful', 'big': 'substantial', 'small': 'minor',
+        'important': 'significant', 'use': 'utilize', 'help': 'assist',
+        'show': 'demonstrate', 'make': 'create', 'do': 'perform'
+      };
+      
+      doc.match('#Adjective').forEach((m) => {
+        let word = m.text().toLowerCase();
+        if (synonyms[word]) {
+           m.replaceWith(synonyms[word]);
+        }
+      });
+      
+      doc.match('#Verb').forEach((m) => {
+        let word = m.text().toLowerCase();
+        if (synonyms[word]) {
+           m.replaceWith(synonyms[word]);
+        }
+      });
+    }
+    
+    let paraphrased = doc.text();
+    
+    // Add a stylistic prefix
+    if (style === 'fluent') {
+       paraphrased = "In a fluent manner: " + paraphrased;
+    } else if (style === 'formal') {
+       paraphrased = "Formally speaking, " + paraphrased;
     }
     
     return paraphrased;
