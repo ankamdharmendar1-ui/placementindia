@@ -34,9 +34,9 @@ const PlagiarismPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <SEO
-        title="Free Plagiarism Checker Online | Quetext"
-        description="Check text for plagiarism with our free online tool. Detect copied content across the web instantly with detailed reports."
-        keywords="free plagiarism checker, duplicate content detector, copyright check"
+        title="Free Plagiarism Checker Online | Quetext Alternative"
+        description="Check text for plagiarism with our free online tool. Detect copied content across the web instantly with detailed reports and high accuracy."
+        keywords="free plagiarism checker, quetext alternative, duplicate content detector, copyright check, check plagiarism online, best plagiarism tool"
         url="/plagiarism-checker"
       />
       

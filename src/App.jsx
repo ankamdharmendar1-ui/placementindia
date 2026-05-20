@@ -20,6 +20,14 @@ const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
 const DisclaimerPage = lazy(() => import('./pages/DisclaimerPage'));
 const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage'));
+
+// Blog Pages
+const BlogPlagiarismPage = lazy(() => import('./pages/BlogPlagiarismPage'));
+const BlogAIDetectorPage = lazy(() => import('./pages/BlogAIDetectorPage'));
+const BlogGrammarPage = lazy(() => import('./pages/BlogGrammarPage'));
+const BlogParaphrasingPage = lazy(() => import('./pages/BlogParaphrasingPage'));
+const BlogWordCountPage = lazy(() => import('./pages/BlogWordCountPage'));
+
 import { hasAdConsent, CONSENT_EVENT } from './lib/adConsent';
 
 const LEGAL_PATHS = new Set([
@@ -70,7 +78,7 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50">
+    <div className="flex flex-col min-h-screen bg-slate-50 overflow-x-hidden w-full max-w-full">
       <Navbar />
       <div className="pt-16">
         <PageAds position="top" />
@@ -92,6 +100,12 @@ function AppContent() {
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+            
+            <Route path="/blog/guide-to-avoiding-plagiarism" element={<BlogPlagiarismPage />} />
+            <Route path="/blog/how-ai-detectors-work" element={<BlogAIDetectorPage />} />
+            <Route path="/blog/top-grammar-mistakes" element={<BlogGrammarPage />} />
+            <Route path="/blog/art-of-paraphrasing" element={<BlogParaphrasingPage />} />
+            <Route path="/blog/why-word-count-matters" element={<BlogWordCountPage />} />
           </Routes>
         </Suspense>
       </div>

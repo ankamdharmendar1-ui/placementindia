@@ -4,11 +4,18 @@
 
 * {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-body {
+html, body, #root {
   font-family: 'Inter', sans-serif;
   background: #f8fafc;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* ── Animations ─────────────────────────── */
@@ -277,5 +284,10 @@ body {
     transition-duration: 0.01ms !important;
   }
   .orb { display: none; }
+  .section-appear {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 

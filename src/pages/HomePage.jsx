@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../lib/seoHelper';
 import AdPlacement from '../components/AdPlacement';
 import { AD_SLOTS } from '../lib/siteConfig';
+import ScrollReveal from '../components/ScrollReveal';
 
 const tools = [
   { id: 'plagiarism-checker',    name: 'Plagiarism Checker',    icon: '🔍', desc: 'Scan billions of sources and detect copied content instantly.',            color: 'from-violet-500 to-purple-600' },
@@ -20,26 +21,15 @@ const stats = [
   { value: 'Free', label: 'No Sign-up Required' },
 ];
 
-function useScrollAnimation() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-      { threshold: 0.15 }
-    );
-    document.querySelectorAll('.section-appear').forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-}
-
 export default function HomePage() {
   const [hovered, setHovered] = useState(null);
-  useScrollAnimation();
 
   return (
     <div className="max-w-7xl mx-auto overflow-x-hidden">
       <SEO
         title="Quetext.in - Free Plagiarism Checker, AI Detector & Writing Tools"
-        description="Free online plagiarism checker, AI content detector, grammar checker, and paraphrasing tools. No sign-up required."
+        description="Quetext.in - The best free Plagiarism Checker and AI Content Detector. Improve your writing with our Grammar Checker, Paraphrasing Tool, Sentence Rewriter, and Word Counter."
+        keywords="quetext, quetext alternative, free plagiarism checker, AI content detector, chatgpt detector, grammar checker, paraphrasing tool, sentence rewriter, word counter, essay checker, check plagiarism online, ai writing tools"
         url="/"
       />
 
@@ -91,7 +81,7 @@ export default function HomePage() {
       </section>
 
         {/* ── Tools Grid ───────────────────────────────── */}
-        <section className="order-1 md:order-2 py-10 md:py-20 section-appear">
+        <ScrollReveal as="section" className="order-1 md:order-2 py-10 md:py-20 section-appear">
         <div className="text-center mb-8 md:mb-14">
           <span className="text-indigo-600 font-semibold text-xs md:text-sm uppercase tracking-widest">Our Tools</span>
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 mt-2 mb-2 md:mb-4">Everything You Need</h2>
@@ -137,7 +127,7 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
       </div>
 
       <div className="px-4">
@@ -145,7 +135,7 @@ export default function HomePage() {
       </div>
 
       {/* ── How It Works ─────────────────────────────── */}
-      <section className="py-20 section-appear">
+      <ScrollReveal as="section" className="py-20 section-appear">
         <div className="text-center mb-14">
           <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Simple Process</span>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">How It Works</h2>
@@ -171,10 +161,10 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* ── Why Choose Us ────────────────────────────── */}
-      <section className="py-20 section-appear">
+      <ScrollReveal as="section" className="py-20 section-appear">
         <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-10 md:p-16">
           <div className="text-center mb-14">
             <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Why Quetext.in</span>
@@ -194,10 +184,40 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
+
+      {/* ── Latest Articles (Blog) ─────────────────── */}
+      <ScrollReveal as="section" className="py-20 section-appear bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-14">
+            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Resources</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">Latest Articles &amp; Guides</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-lg mt-4">Improve your writing skills with our in-depth guides.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { path: '/blog/guide-to-avoiding-plagiarism', title: 'The Ultimate Guide to Avoiding Plagiarism', desc: 'Learn strategies to ensure 100% original writing in academic and professional contexts.' },
+              { path: '/blog/how-ai-detectors-work', title: 'How AI Content Detectors Work', desc: 'Explore the science behind AI detectors, NLP, perplexity, and burstiness.' },
+              { path: '/blog/top-grammar-mistakes', title: 'Top 10 Grammar Mistakes to Avoid', desc: 'Improve your professional writing by avoiding these common grammatical errors.' },
+              { path: '/blog/art-of-paraphrasing', title: 'The Art of Paraphrasing', desc: 'Master the techniques to rewrite text without losing meaning and avoid plagiarism.' },
+              { path: '/blog/why-word-count-matters', title: 'Why Word Count Matters for SEO', desc: 'Discover the ideal word count for SEO and how content length impacts your rankings.' }
+            ].map((blog, i) => (
+              <Link key={i} to={blog.path} className="block group">
+                <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 h-full hover:shadow-lg hover:border-indigo-200 transition-all duration-300">
+                  <div className="text-indigo-600 font-bold mb-3 group-hover:text-indigo-800 transition-colors">{blog.title}</div>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">{blog.desc}</p>
+                  <span className="text-indigo-500 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Read Article <span>→</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
 
       {/* ── Trust / Legal (AdSense) ───────────────── */}
-      <section className="py-16 px-4 section-appear">
+      <ScrollReveal as="section" className="py-16 px-4 section-appear">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Transparent &amp; Trustworthy</h2>
           <p className="text-gray-600 mb-8">
@@ -212,10 +232,10 @@ export default function HomePage() {
             <Link to="/cookie-policy" className="px-5 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-indigo-400 hover:text-indigo-600 transition">Cookie Policy</Link>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* ── CTA ──────────────────────────────────────── */}
-      <section className="py-20 section-appear">
+      <ScrollReveal as="section" className="py-20 section-appear">
         <div className="relative hero-gradient rounded-3xl p-12 md:p-20 text-center overflow-hidden">
           <div className="orb w-80 h-80 bg-purple-500 top-[-60px] right-[-60px]" style={{animationDelay:'1s'}} />
           <div className="orb w-64 h-64 bg-cyan-500 bottom-[-40px] left-[-40px]"  style={{animationDelay:'3s'}} />
@@ -234,7 +254,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
     </div>
   );

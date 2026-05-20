@@ -82,8 +82,9 @@ const ToolsHubPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <Helmet>
-        <title>Free Writing Tools | Quetext</title>
-        <meta name="description" content="Access our suite of free writing tools including plagiarism checker, AI detector, grammar checker, and more. Improve your writing quality today." />
+        <title>Free Writing Tools | Quetext Alternative</title>
+        <meta name="description" content="Access our complete suite of free writing tools including Plagiarism Checker, AI Content Detector, Grammar Checker, Paraphrasing Tool, Sentence Rewriter, and Word Counter. Rank higher with 100% original content." />
+        <meta name="keywords" content="quetext, quetext alternative, free writing tools, plagiarism checker, AI content detector, grammar checker, paraphrasing tool, sentence rewriter, word counter, essay checker" />
         
         <script type="application/ld+json">
           {JSON.stringify({
