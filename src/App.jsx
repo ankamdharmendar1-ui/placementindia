@@ -1,23 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import PageAds from './components/PageAds';
-import HomePage from './pages/HomePage';
-import PlagiarismPage from './pages/PlagiarismPage';
-import AIDetectionPage from './pages/AIDetectionPage';
-import ParaphrasePage from './pages/ParaphrasePage';
-import GrammarPage from './pages/GrammarPage';
-import SentenceRewriterPage from './pages/SentenceRewriterPage';
-import WordCounterPage from './pages/WordCounterPage';
-import ToolsHubPage from './pages/ToolsHubPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import TermsPage from './pages/TermsPage';
-import DisclaimerPage from './pages/DisclaimerPage';
-import CookiePolicyPage from './pages/CookiePolicyPage';
+import PageLoader from './components/PageLoader';
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const PlagiarismPage = lazy(() => import('./pages/PlagiarismPage'));
+const AIDetectionPage = lazy(() => import('./pages/AIDetectionPage'));
+const ParaphrasePage = lazy(() => import('./pages/ParaphrasePage'));
+const GrammarPage = lazy(() => import('./pages/GrammarPage'));
+const SentenceRewriterPage = lazy(() => import('./pages/SentenceRewriterPage'));
+const WordCounterPage = lazy(() => import('./pages/WordCounterPage'));
+const ToolsHubPage = lazy(() => import('./pages/ToolsHubPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const DisclaimerPage = lazy(() => import('./pages/DisclaimerPage'));
+const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage'));
 import { hasAdConsent, CONSENT_EVENT } from './lib/adConsent';
 
 const LEGAL_PATHS = new Set([
@@ -74,22 +76,24 @@ function AppContent() {
         <PageAds position="top" />
       </div>
       <div className="flex-grow">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/tools" element={<ToolsHubPage />} />
-          <Route path="/plagiarism-checker" element={<PlagiarismPage />} />
-          <Route path="/ai-content-detector" element={<AIDetectionPage />} />
-          <Route path="/paraphrasing-tool" element={<ParaphrasePage />} />
-          <Route path="/grammar-checker" element={<GrammarPage />} />
-          <Route path="/sentence-rewriter" element={<SentenceRewriterPage />} />
-          <Route path="/word-counter" element={<WordCounterPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/disclaimer" element={<DisclaimerPage />} />
-          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/tools" element={<ToolsHubPage />} />
+            <Route path="/plagiarism-checker" element={<PlagiarismPage />} />
+            <Route path="/ai-content-detector" element={<AIDetectionPage />} />
+            <Route path="/paraphrasing-tool" element={<ParaphrasePage />} />
+            <Route path="/grammar-checker" element={<GrammarPage />} />
+            <Route path="/sentence-rewriter" element={<SentenceRewriterPage />} />
+            <Route path="/word-counter" element={<WordCounterPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/disclaimer" element={<DisclaimerPage />} />
+            <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+          </Routes>
+        </Suspense>
       </div>
       {showBottomAd && <PageAds position="bottom" />}
       <Footer />

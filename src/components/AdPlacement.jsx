@@ -15,7 +15,7 @@ export default function AdPlacement({ slot, className = '' }) {
 
   return (
     <aside
-      className={`ad-placement my-6 ${className}`}
+      className={`ad-placement my-6 min-h-[120px] md:min-h-[250px] ${className}`}
       aria-label="Advertisement"
     >
       <p className="text-xs text-center text-gray-400 mb-2 uppercase tracking-wider">
