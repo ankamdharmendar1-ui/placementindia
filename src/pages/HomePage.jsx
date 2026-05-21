@@ -25,7 +25,7 @@ export default function HomePage() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="max-w-7xl mx-auto overflow-x-hidden">
+    <div className="max-w-7xl mx-auto">
       <SEO
         title="Quetext – Free Plagiarism Checker, AI Detector & Writing Tools"
         description="Quetext.in offers the best free plagiarism checker, AI content detector, grammar checker, paraphrasing tool, and word counter – all powered by Google AdSense and optimized for speed."

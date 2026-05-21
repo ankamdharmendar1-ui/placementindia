@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 * {
-  scroll-behavior: smooth;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body, #root {
@@ -14,7 +17,6 @@ html, body, #root {
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -223,57 +225,22 @@ html, body, #root {
 ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
 
-/* ── Mobile: reduce animations ───────────── */
+/* ── Mobile: remove animations for performance ───────────── */
 @media (max-width: 768px) {
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-5px); }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
   }
-
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
+  
+  .orb { 
+    display: none !important; 
   }
-
-  @keyframes slide-in-left {
-    from { opacity: 0; transform: translateX(-20px); }
-    to   { opacity: 1; transform: translateX(0); }
+  
+  .section-appear {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
-
-  @keyframes slide-in-right {
-    from { opacity: 0; transform: translateX(20px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-
-  /* Shrink orbs on mobile */
-  .orb {
-    filter: blur(40px);
-    opacity: 0.25;
-    width: 150px !important;
-    height: 150px !important;
-  }
-
-  /* Reduce tool card lift */
-  .tool-card:hover {
-    transform: translateY(-3px);
-  }
-
-  /* Reduce glass card lift */
-  .glass-card:hover {
-    transform: translateY(-2px);
-  }
-
-  /* Reduce btn bounce */
-  .btn-gradient:hover,
-  .btn-shimmer:hover {
-    transform: translateY(-1px);
-  }
-
-  /* Shorten animation durations */
-  .animate-fade-in-up { animation-duration: 0.4s; }
-  .animate-fade-in    { animation-duration: 0.3s; }
-  .animate-float      { animation-duration: 4s; }
-  .animate-scale-in   { animation-duration: 0.3s; }
 }
 
 /* Respect user preference for reduced motion */

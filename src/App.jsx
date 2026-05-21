@@ -78,7 +78,7 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 overflow-x-hidden w-full max-w-full">
+    <div className="flex flex-col min-h-screen bg-slate-50 w-full max-w-full">
       <Navbar />
       <div className="pt-16">
         <PageAds position="top" />

@@ -21,8 +21,7 @@
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
     <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
-    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <title>Quetext.in - Free Plagiarism Checker</title>
   <script type="application/ld+json">
 {
@@ -40,57 +39,65 @@
 </head>
   <body class="bg-slate-100">
     <div id="root">
-      <!-- SEO Pre-rendered Static Content (Hydrated by React on load) -->
-      <header style="padding: 20px; text-align: center; border-bottom: 1px solid #e2e8f0; background: #ffffff;">
-        <h1 style="color: #4f46e5; font-size: 1.8rem; font-weight: 800; margin-bottom: 10px;">Quetext.in - Free Plagiarism Checker & Writing Tools</h1>
-        <p style="color: #4b5563; font-size: 0.95rem; max-width: 600px; margin: 0 auto;">Free online plagiarism checker, AI content detector, grammar checker, and paraphrasing tools. No sign-up required.</p>
-      </header>
-      <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-        <section style="text-align: center; margin-bottom: 50px;">
-          <h2 style="font-size: 2.2rem; font-weight: 900; color: #111827; margin-bottom: 15px;">Write Smarter, Not Harder</h2>
-          <p style="font-size: 1.15rem; color: #4b5563; line-height: 1.6; max-width: 650px; margin: 0 auto;">
-            Plagiarism checker, AI detector, grammar fixer, paraphraser — everything you need to create original, high-quality content.
+      <!-- Loading Spinner (Shown until React hydrates) -->
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f8fafc;">
+        <div style="width: 40px; height: 40px; border: 4px solid #e2e8f0; border-top: 4px solid #4f46e5; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      </div>
+      <style>
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      </style>
+
+      <!-- SEO Pre-rendered Static Content (Visually hidden for humans, accessible for bots) -->
+      <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+        <header>
+          <h1>Quetext.in - Free Plagiarism Checker & Writing Tools</h1>
+          <p>Free online plagiarism checker, AI content detector, grammar checker, and paraphrasing tools. No sign-up required.</p>
+        </header>
+        <main>
+          <section>
+            <h2>Write Smarter, Not Harder</h2>
+            <p>Plagiarism checker, AI detector, grammar fixer, paraphraser — everything you need to create original, high-quality content.</p>
+          </section>
+          <section>
+            <h2>Our Free AI-Powered Writing Tools</h2>
+            <ul>
+              <li><strong>Plagiarism Checker:</strong> Scan billions of sources and detect copied content instantly.</li>
+              <li><strong>AI Content Detector:</strong> Identify ChatGPT and AI-generated text with high accuracy.</li>
+              <li><strong>Grammar Checker:</strong> Fix grammatical errors and improve your writing quality effortlessly.</li>
+              <li><strong>Paraphrasing Tool:</strong> Rephrase any text while preserving its original meaning perfectly.</li>
+              <li><strong>Sentence Rewriter:</strong> Rewrite sentences for better clarity and improved structure.</li>
+              <li><strong>Word Counter:</strong> Instantly count words, characters, sentences, and reading time.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>How It Works</h2>
+            <ol>
+              <li><strong>Paste Your Text:</strong> Copy and paste your content into the tool.</li>
+              <li><strong>Click Analyze:</strong> Our AI scans your text instantly.</li>
+              <li><strong>Get Results:</strong> View a detailed, color-coded report.</li>
+              <li><strong>Fix & Improve:</strong> Apply suggestions and ensure originality.</li>
+            </ol>
+          </section>
+          <section>
+            <h2>Why Choose Quetext.in</h2>
+            <ul>
+              <li><strong>🚀 Lightning Fast:</strong> Get results in seconds, not minutes. Our optimized engine processes thousands of words instantly.</li>
+              <li><strong>🎯 99% Accuracy:</strong> Advanced NLP algorithms ensure you get the most accurate results in detecting plagiarism and AI content.</li>
+              <li><strong>🔒 Privacy First:</strong> Your documents are never stored permanently or shared. We respect your privacy completely.</li>
+            </ul>
+          </section>
+        </main>
+        <footer>
+          <p>© 2024 Quetext.in. All rights reserved.</p>
+          <p>
+            <a href="/about">About Us</a> | 
+            <a href="/contact">Contact</a> | 
+            <a href="/privacy-policy">Privacy Policy</a> | 
+            <a href="/terms">Terms</a> | 
+            <a href="/cookie-policy">Cookie Policy</a>
           </p>
-        </section>
-        <section style="margin-bottom: 50px; background: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0;">
-          <h2 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 20px; border-left: 4px solid #4f46e5; padding-left: 10px;">Our Free AI-Powered Writing Tools</h2>
-          <ul style="list-style-type: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 15px;"><strong style="color: #4f46e5;">Plagiarism Checker:</strong> Scan billions of sources and detect copied content instantly.</li>
-            <li style="margin-bottom: 15px;"><strong style="color: #3b82f6;">AI Content Detector:</strong> Identify ChatGPT and AI-generated text with high accuracy.</li>
-            <li style="margin-bottom: 15px;"><strong style="color: #10b981;">Grammar Checker:</strong> Fix grammatical errors and improve your writing quality effortlessly.</li>
-            <li style="margin-bottom: 15px;"><strong style="color: #f59e0b;">Paraphrasing Tool:</strong> Rephrase any text while preserving its original meaning perfectly.</li>
-            <li style="margin-bottom: 15px;"><strong style="color: #ec4899;">Sentence Rewriter:</strong> Rewrite sentences for better clarity and improved structure.</li>
-            <li style="margin-bottom: 15px;"><strong style="color: #6366f1;">Word Counter:</strong> Instantly count words, characters, sentences, and reading time.</li>
-          </ul>
-        </section>
-        <section style="margin-bottom: 50px;">
-          <h2 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 20px;">How It Works</h2>
-          <ol style="padding-left: 20px; color: #4b5563; line-height: 1.6;">
-            <li style="margin-bottom: 10px;"><strong style="color: #111827;">Paste Your Text:</strong> Copy and paste your content into the tool.</li>
-            <li style="margin-bottom: 10px;"><strong style="color: #111827;">Click Analyze:</strong> Our AI scans your text instantly.</li>
-            <li style="margin-bottom: 10px;"><strong style="color: #111827;">Get Results:</strong> View a detailed, color-coded report.</li>
-            <li style="margin-bottom: 10px;"><strong style="color: #111827;">Fix & Improve:</strong> Apply suggestions and ensure originality.</li>
-          </ol>
-        </section>
-        <section style="margin-bottom: 50px; background: #f8fafc; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0;">
-          <h2 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 20px;">Why Choose Quetext.in</h2>
-          <ul style="list-style-type: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 15px;"><strong>🚀 Lightning Fast:</strong> Get results in seconds, not minutes. Our optimized engine processes thousands of words instantly.</li>
-            <li style="margin-bottom: 15px;"><strong>🎯 99% Accuracy:</strong> Advanced NLP algorithms ensure you get the most accurate results in detecting plagiarism and AI content.</li>
-            <li style="margin-bottom: 15px;"><strong>🔒 Privacy First:</strong> Your documents are never stored permanently or shared. We respect your privacy completely.</li>
-          </ul>
-        </section>
-      </main>
-      <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid #e2e8f0; font-size: 0.875rem; color: #6b7280; background: #ffffff;">
-        <p style="margin-bottom: 10px;">© 2024 Quetext.in. All rights reserved.</p>
-        <p>
-          <a href="/about" style="color: #4f46e5; text-decoration: none; margin: 0 8px;">About Us</a> | 
-          <a href="/contact" style="color: #4f46e5; text-decoration: none; margin: 0 8px;">Contact</a> | 
-          <a href="/privacy-policy" style="color: #4f46e5; text-decoration: none; margin: 0 8px;">Privacy Policy</a> | 
-          <a href="/terms" style="color: #4f46e5; text-decoration: none; margin: 0 8px;">Terms</a> | 
-          <a href="/cookie-policy" style="color: #4f46e5; text-decoration: none; margin: 0 8px;">Cookie Policy</a>
-        </p>
-      </footer>
+        </footer>
+      </div>
     </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
