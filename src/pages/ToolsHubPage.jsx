@@ -62,8 +62,20 @@ const tools = [
     output: 'Word count, character count, reading time',
     icon: '🔢',
     keywords: 'character counter, text analyzer, writing statistics'
+  },
+  {
+    id: 'index-checker',
+    name: 'Index Checker',
+    description: 'Check if a URL is indexed by Google Search',
+    purpose: 'Verify SEO index status of pages',
+    input: 'URL',
+    output: 'Indexing status message',
+    icon: '🔎',
+    keywords: 'free index checker, SEO index check, Google indexed checker'
   }
 ];
+
+
 
 const ToolsHubPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
