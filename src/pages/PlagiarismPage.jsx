@@ -5,6 +5,62 @@ import SourceList from '../components/SourceList';
 import { checkPlagiarism } from '../lib/api';
 import SEO from '../lib/seoHelper';
 
+// Structured data for Free Plagiarism Checker
+const schemaData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Free Plagiarism Checker",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Free online plagiarism checker that scans text against billions of web pages to detect duplicate content instantly.",
+    "url": "https://quetext.in/plagiarism-checker",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this plagiarism checker really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the basic version is completely free with no hidden fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I interpret the plagiarism score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The score indicates the percentage of your text that matches external sources. Lower scores are typically acceptable, but aim for originality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my text get saved to a database?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We do not store your submitted text in a public database, ensuring privacy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it check PDFs and Word documents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Currently you can paste text; file upload support is planned for future releases."
+        }
+      }
+    ]
+  }
+];
+
 const PlagiarismPage = () => {
   const [text, setText] = useState('');
   const [result, setResult] = useState(null);
@@ -34,11 +90,11 @@ const PlagiarismPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <SEO
-        title="Quetext – Free Plagiarism Checker"
-        description="Check any text for plagiarism instantly with Quetext’s free online checker. Get detailed reports and high accuracy, powered by Google AdSense.
-"
-        keywords="quetext plagiarism checker, free plagiarism checker, duplicate content detector, check plagiarism online, plagiarism detection"
+        title="Free Plagiarism Checker"
+        description="Free Plagiarism Checker – Instantly check any text for plagiarism with Quetext. Get detailed reports, high accuracy, and protect your academic integrity."
+        keywords="Free Plagiarism Checker, plagiarism checker, duplicate content detector, free plagiarism detection"
         url="/plagiarism-checker"
+        schema={schemaData}
       />
       
       <h1 className="text-3xl font-bold mb-6">Plagiarism Checker</h1>
