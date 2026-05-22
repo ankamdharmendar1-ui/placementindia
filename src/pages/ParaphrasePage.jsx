@@ -30,123 +30,245 @@ const ParaphrasePage = () => {
     }
   };
 
+  const schemaData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Free Paraphrasing Tool",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "A free paraphrasing tool that helps you rephrase text, reword sentences, and avoid plagiarism while maintaining the original meaning."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is paraphrasing the same as plagiarism?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paraphrasing is not plagiarism if you cite your sources correctly and rewrite the text significantly. Simply changing a few words (patchwriting) can still be considered plagiarism. Our free paraphrasing tool helps you get started with a new structure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many styles are available in the free paraphrasing tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer five distinct styles: Standard, Formal, Casual, Creative, and Academic. Each style uses different vocabulary and sentence structures to achieve the desired tone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the paraphrased text unique?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our free paraphrasing tool generates unique variations of your input. However, we recommend always running the result through our plagiarism checker to ensure it's sufficiently different from the source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this free paraphrasing tool for academic writing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the Academic style is specifically designed to help students and researchers reword complex ideas while maintaining a professional and scholarly tone suitable for essays and research papers."
+          }
+        }
+      ]
+    }
+  ];
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SEO
-        title="Free Paraphrasing Tool Online | Quetext"
-        description="Rephrase text while maintaining original meaning with our free paraphrasing tool. Avoid plagiarism and improve content clarity."
-        keywords="rewriter, article spinner, content rephraser"
+        title="Free Paraphrasing Tool"
+        description="Use our Free Paraphrasing Tool to rephrase text, reword sentences, and improve content clarity. The best free paraphrasing tool to avoid plagiarism."
+        keywords="free paraphrasing tool, paraphrasing tool, free paraphrase tool"
         url="/paraphrasing-tool"
+        customSchema={schemaData}
       />
       
-      <h1 className="text-3xl font-bold mb-6">Paraphrasing Tool</h1>
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Free Paraphrasing Tool</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Rephrase your text instantly with our advanced AI paraphrasing tool. Reword sentences, improve readability, and avoid plagiarism for free.
+        </p>
+      </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Original Text
             </label>
             <TextEditor 
               value={original} 
               onChange={setOriginal} 
-              placeholder="Enter text to paraphrase..."
-              rows={10}
+              placeholder="Enter or paste text here to paraphrase..."
+              rows={12}
             />
           </div>
           
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Paraphrase Style
-            </label>
-            <select
-              value={style}
-              onChange={(e) => setStyle(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md"
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-between mt-4">
+            <div className="w-full sm:w-auto flex-grow max-w-xs">
+              <label className="sr-only">Paraphrase Style</label>
+              <select
+                value={style}
+                onChange={(e) => setStyle(e.target.value)}
+                className="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 text-sm focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="standard">Standard - Clear & Natural</option>
+                <option value="formal">Formal - Professional</option>
+                <option value="casual">Casual - Conversational</option>
+                <option value="creative">Creative - Expressive</option>
+                <option value="academic">Academic - Scholarly</option>
+              </select>
+            </div>
+            
+            <button 
+              onClick={handleParaphrase}
+              disabled={loading || !original.trim()}
+              className="w-full sm:w-auto bg-blue-600 text-white font-medium px-8 py-2.5 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-60 shadow-sm"
             >
-              <option value="standard">Standard</option>
-              <option value="formal">Formal</option>
-              <option value="casual">Casual</option>
-              <option value="creative">Creative</option>
-              <option value="academic">Academic</option>
-            </select>
+              {loading ? 'Paraphrasing...' : 'Paraphrase Text'}
+            </button>
           </div>
-          
-          <button 
-            onClick={handleParaphrase}
-            disabled={loading}
-            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
-          >
-            {loading ? 'Paraphrasing...' : 'Paraphrase Text'}
-          </button>
-          {error && <p className="text-red-500 mt-2">{error}</p>}
+          {error && <p className="text-red-500 mt-3 text-sm font-medium">{error}</p>}
         </div>
         
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Paraphrased Result
-          </label>
-          <TextEditor 
-            value={paraphrased} 
-            onChange={setParaphrased} 
-            placeholder="Paraphrased text will appear here..."
-            rows={10}
-            readOnly={false}
-          />
-          
-          {paraphrased && (
-            <div className="mt-4 flex justify-end">
-              <button
-                onClick={() => navigator.clipboard.writeText(paraphrased)}
-                className="flex items-center text-sm text-blue-600 hover:text-blue-800"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-                  <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
-                </svg>
-                Copy to Clipboard
-              </button>
+        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+          <div className="mb-4 h-full flex flex-col">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
+              Paraphrased Result
+            </label>
+            <div className="flex-grow">
+              <TextEditor 
+                value={paraphrased} 
+                onChange={setParaphrased} 
+                placeholder="Your paraphrased text will appear here..."
+                rows={12}
+                readOnly={false}
+              />
             </div>
-          )}
+            
+            {paraphrased && (
+              <div className="mt-4 flex justify-end">
+                <button
+                  onClick={() => navigator.clipboard.writeText(paraphrased)}
+                  className="flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 bg-blue-50 px-4 py-2 rounded-lg transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
+                    <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
+                  </svg>
+                  Copy to Clipboard
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Content Section for SEO and AdSense */}
-      <div className="mt-16 max-w-4xl mx-auto">
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">What is Paraphrasing?</h2>
-          <p className="text-gray-700 mb-4">
-            Paraphrasing is the process of rewriting someone else's ideas or text in your own words. 
-            Unlike simple copying, effective paraphrasing involves understanding the core message 
-            and expressing it with a new sentence structure and vocabulary while maintaining 
-            the original meaning.
+      {/* Content Section for SEO */}
+      <div className="mt-16 max-w-4xl mx-auto text-gray-800 leading-relaxed">
+        
+        <section className="mb-12 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-3xl font-bold mb-6 text-gray-900">What is a Paraphrasing Tool?</h2>
+          <p className="mb-4">
+            A <strong>paraphrasing tool</strong> (also known as a sentence rewriter or content rephraser) is an advanced AI-powered software designed to rewrite text while preserving its original meaning. Whether you are a student writing an essay, a blogger drafting an article, or a professional composing an email, an online paraphrasing tool helps you express ideas more clearly and creatively.
           </p>
-          <p className="text-gray-700 mb-4">
-            Our online paraphrasing tool helps you quickly reword sentences and paragraphs to 
-            improve clarity, avoid plagiarism, and adjust the tone of your writing. Whether you 
-            need to make a sentence more formal for an academic paper or more casual for a blog 
-            post, our tool provides multiple styles to suit your needs.
+          <p className="mb-4">
+            Unlike simple word spinners that just replace synonyms, the best paraphrasing tools understand the context of your sentence. They restructure grammar, change sentence flows, and ensure the resulting text is natural, readable, and free of plagiarism.
           </p>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div className="border-b pb-4">
-              <h3 className="font-semibold text-lg mb-2">Is paraphrasing the same as plagiarism?</h3>
-              <p className="text-gray-600">Paraphrasing is not plagiarism if you cite your sources correctly and rewrite the text significantly. Simply changing a few words (patchwriting) can still be considered plagiarism. Our tool helps you get started with a new structure.</p>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900">How to Use Our Free Paraphrasing Tool</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-blue-50 p-6 rounded-xl">
+              <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">1</div>
+              <h3 className="font-bold text-lg mb-2">Paste Your Text</h3>
+              <p className="text-sm text-gray-700">Copy the text you want to reword and paste it into the original text box of our paraphrase tool.</p>
             </div>
-            <div className="border-b pb-4">
-              <h3 className="font-semibold text-lg mb-2">How many styles are available?</h3>
-              <p className="text-gray-600">We offer five distinct styles: Standard, Formal, Casual, Creative, and Academic. Each style uses different vocabulary and sentence structures to achieve the desired tone.</p>
+            <div className="bg-blue-50 p-6 rounded-xl">
+              <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">2</div>
+              <h3 className="font-bold text-lg mb-2">Select a Style</h3>
+              <p className="text-sm text-gray-700">Choose from Standard, Formal, Casual, Creative, or Academic to match the tone of your paraphrased content.</p>
             </div>
-            <div className="border-b pb-4">
-              <h3 className="font-semibold text-lg mb-2">Is the paraphrased text unique?</h3>
-              <p className="text-gray-600">Yes, our tool generates unique variations of your input. However, we recommend always running the result through our plagiarism checker to ensure it's sufficiently different from the source.</p>
+            <div className="bg-blue-50 p-6 rounded-xl">
+              <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">3</div>
+              <h3 className="font-bold text-lg mb-2">Click Paraphrase</h3>
+              <p className="text-sm text-gray-700">Hit the "Paraphrase Text" button and let our AI instantly rewrite sentences for you.</p>
             </div>
-            <div className="border-b pb-4">
-              <h3 className="font-semibold text-lg mb-2">Can I use this for academic writing?</h3>
-              <p className="text-gray-600">Yes, the "Academic" style is specifically designed to help students and researchers reword complex ideas while maintaining a professional and scholarly tone.</p>
+          </div>
+        </section>
+
+        <section className="mb-12 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Use Our Online Paraphrasing Tool?</h2>
+          <ul className="space-y-4">
+            <li className="flex items-start">
+              <svg className="h-6 w-6 text-green-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <strong className="block text-gray-900">Avoid Plagiarism</strong>
+                <span className="text-gray-700">Our paraphrasing tool restructures your text fundamentally, helping you create 100% unique content that passes plagiarism checks.</span>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <svg className="h-6 w-6 text-green-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <strong className="block text-gray-900">Improve Readability</strong>
+                <span className="text-gray-700">Simplify complex sentences and ensure your writing is easy to understand for your target audience.</span>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <svg className="h-6 w-6 text-green-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <strong className="block text-gray-900">Save Time</strong>
+                <span className="text-gray-700">Don't spend hours trying to find the right words. Let our AI paraphrase text for you in seconds.</span>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <svg className="h-6 w-6 text-green-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <strong className="block text-gray-900">100% Free to Use</strong>
+                <span className="text-gray-700">Access the best paraphrasing tool features without paying any subscription fees. Perfect for students and writers on a budget.</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-8 text-gray-900 border-b pb-4">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-bold text-xl mb-2 text-gray-900">Is paraphrasing the same as plagiarism?</h3>
+              <p className="text-gray-700">Paraphrasing is not plagiarism if you cite your sources correctly and rewrite the text significantly. Simply changing a few words (patchwriting) can still be considered plagiarism. Our paraphrasing tool helps you get started with a completely new sentence structure.</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-xl mb-2 text-gray-900">How many styles are available in the paraphrasing tool?</h3>
+              <p className="text-gray-700">We offer five distinct styles: Standard, Formal, Casual, Creative, and Academic. Each style uses different vocabulary and sentence structures to achieve the desired tone for your rephrased text.</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-xl mb-2 text-gray-900">Is the paraphrased text unique?</h3>
+              <p className="text-gray-700">Yes, our online paraphrasing tool generates unique variations of your input. However, we recommend always running the result through a plagiarism checker to ensure it is sufficiently different from the original source material.</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-xl mb-2 text-gray-900">Can I use this paraphrasing tool for academic writing?</h3>
+              <p className="text-gray-700">Absolutely. The "Academic" style is specifically designed to help students, researchers, and scholars reword complex ideas while maintaining a professional and scholarly tone suitable for essays, thesis papers, and research publications.</p>
             </div>
           </div>
         </section>

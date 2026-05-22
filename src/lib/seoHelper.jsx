@@ -5,7 +5,7 @@ import { SITE_NAME, SITE_URL, SUPPORT_EMAIL } from './siteConfig';
 const DEFAULT_TITLE_SUFFIX = ' | Quetext';
 const DEFAULT_KEYWORDS = 'quetext, free plagiarism checker, AI content detector, grammar checker, paraphrasing tool, sentence rewriter, word counter, essay checker, plagiarism detection, AI detection';
 
-const SEO = ({ title, description, keywords, url = '/' }) => {
+const SEO = ({ title, description, keywords, url = '/', customSchema = [] }) => {
   // Ensure the brand name appears in the title
   const fullTitle = title?.includes('Quetext') ? title : `${title || SITE_NAME}${DEFAULT_TITLE_SUFFIX}`;
   const fullDescription = description || `Free online writing tools by ${SITE_NAME}: plagiarism checker, AI detector, grammar checker, paraphrasing, and more.`;
@@ -77,6 +77,12 @@ const SEO = ({ title, description, keywords, url = '/' }) => {
       <script type="application/ld+json">{JSON.stringify(orgLd)}</script>
       {/* Breadcrumb structured data */}
       <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
+      {/* Custom injected schema from pages */}
+      {customSchema.map((schema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   );
 };
