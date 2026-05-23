@@ -77,12 +77,15 @@ const handleCheck = async () => {
     setError('');
     setStatus(null);
     try {
-      const query = `site:${formattedUrl}`;
+      const domain = formattedUrl.replace(/^https?:\/\//, '');
+      const query = `site:${domain}`;
       const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
       // Open the Google search in a new tab for the user to verify indexing.
       const newWin = window.open(searchUrl, '_blank', 'noopener,noreferrer');
       if (!newWin) {
-        setError('Popup blocked. Please allow popups for this site.');
+        // Fallback: navigate in the same tab if popup is blocked
+        window.location.href = searchUrl;
+        setStatus('Navigating to Google search. Please check the results.');
         return;
       }
       // Inform the user what to look for.
