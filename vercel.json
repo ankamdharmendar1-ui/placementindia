@@ -8,11 +8,9 @@
     }
   },
   "redirects": [
-    {
-      "source": "/:path*",
+      "destination": "https://www.quetext.in/:path*",
       "statusCode": 301,
       "permanent": true
-    }
   ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.js" },
