@@ -14,7 +14,7 @@ const schemaData = [
     "operatingSystem": "Any",
     "applicationCategory": "UtilitiesApplication",
     "description": "Free online plagiarism checker that scans text against billions of web pages to detect duplicate content instantly.",
-    "url": "https://quetext.in/plagiarism-checker",
+    "url": "https://www.quetext.in/plagiarism-checker",
     "offers": {
       "@type": "Offer",
       "price": "0",

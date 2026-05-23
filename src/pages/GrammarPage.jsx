@@ -12,7 +12,7 @@ const schemaData = [
     "operatingSystem": "Any",
     "applicationCategory": "UtilitiesApplication",
     "description": "Free online grammar checker that corrects grammar, spelling, and punctuation errors instantly.",
-    "url": "https://quetext.in/grammar-checker",
+    "url": "https://www.quetext.in/grammar-checker",
     "offers": {
       "@type": "Offer",
       "price": "0",

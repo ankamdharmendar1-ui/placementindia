@@ -10,7 +10,7 @@ const schemaData = [
     "operatingSystem": "Any",
     "applicationCategory": "UtilitiesApplication",
     "description": "Check instantly whether a URL is indexed by Google Search. Free tool for SEO monitoring.",
-    "url": "https://quetext.in/index-checker",
+    "url": "https://www.quetext.in/index-checker",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -55,7 +55,7 @@ const schemaData = [
       }
     ]
   }
-
+];
 
 const IndexCheckerPage = () => {
   const [url, setUrl] = useState('');
@@ -68,14 +68,23 @@ const handleCheck = async () => {
       setError('Please enter a URL');
       return;
     }
+    // Ensure URL includes protocol for proper query
+    let formattedUrl = url.trim();
+    if (!/^https?:\/\//i.test(formattedUrl)) {
+      formattedUrl = `https://${formattedUrl}`;
+    }
     setLoading(true);
     setError('');
     setStatus(null);
     try {
-      const query = `site:${url}`;
+      const query = `site:${formattedUrl}`;
       const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
       // Open the Google search in a new tab for the user to verify indexing.
-      window.open(searchUrl, '_blank');
+      const newWin = window.open(searchUrl, '_blank', 'noopener,noreferrer');
+      if (!newWin) {
+        setError('Popup blocked. Please allow popups for this site.');
+        return;
+      }
       // Inform the user what to look for.
       setStatus('Opened Google search. If results for your URL appear, the page is indexed; otherwise it is not indexed.');
     } catch (err) {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://quetext.in/sitemap.xml
+Sitemap: https://www.quetext.in/sitemap.xml

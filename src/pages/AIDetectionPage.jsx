@@ -12,7 +12,7 @@ const schemaData = [
     "operatingSystem": "Any",
     "applicationCategory": "UtilitiesApplication",
     "description": "Detect AI-generated content for free. Identify text from ChatGPT, GPT-4, Claude, Gemini and other LLMs.",
-    "url": "https://quetext.in/ai-content-detector",
+    "url": "https://www.quetext.in/ai-content-detector",
     "offers": {
       "@type": "Offer",
       "price": "0",

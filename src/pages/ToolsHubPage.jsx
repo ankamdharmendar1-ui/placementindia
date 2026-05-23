@@ -109,7 +109,7 @@ const ToolsHubPage = () => {
                 "@type": "SoftwareApplication",
                 "name": tool.name,
                 "description": tool.description,
-                "url": `https://quetext.in/${tool.id}`,
+                "url": `https://www.quetext.in/${tool.id}`,
                 "applicationCategory": "WritingApplication"
               }
             }))
