@@ -10,8 +10,7 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "quetext.in" }],
-      "destination": "https://www.quetext.in/:path*",
+      "statusCode": 301,
       "permanent": true
     }
   ],
