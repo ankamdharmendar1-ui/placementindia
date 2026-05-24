@@ -21,27 +21,10 @@
     <h1>Quetext Tools Hub</h1>
     <p>Select a tool to open:</p>
     <ul id="tools-list">
-      <!-- Tool links will be injected here -->
+      <li><a href="youtube-subscribe-generator/" class="tool-link">Free YouTube Subscribe Link Generator</a></li>
+      <li><a href="tools-index-checker/" class="tool-link">Tools Index Checker</a></li>
     </ul>
   </div>
-  <script>
-    // Dynamically generate list of sub‑folders (tools)
-    // In a static site we cannot read the filesystem, so we hard‑code known tools.
-    const tools = [
-      { name: 'Free YouTube Subscribe Link Generator', path: 'youtube-subscribe-generator/' },
-      { name: 'Tools Index Checker', path: 'tools-index-checker/' }
-      // Add new tools here following the same structure.
-    ];
-    const listEl = document.getElementById('tools-list');
-    tools.forEach(t => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = t.path;
-      a.textContent = t.name;
-      a.className = 'tool-link';
-      li.appendChild(a);
-      listEl.appendChild(li);
-    });
-  </script>
+  <!-- No script needed as tools are listed statically -->
 </body>
 </html>
