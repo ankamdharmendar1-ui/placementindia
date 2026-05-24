@@ -32,6 +32,8 @@ export default function Footer() {
               AI detection, grammar, and more. Supported by Google AdSense.
             </p>
             <p className="text-gray-400 text-sm">
+              Contact for any query or deal
+              <br />
               Email:{' '}
               <a href={`mailto:${SUPPORT_EMAIL}`} className="text-blue-400 hover:underline">
                 {SUPPORT_EMAIL}
