@@ -10,7 +10,7 @@ const tools = [
   { id: 'sentence-rewriter',     name: 'Sentence Rewriter',     icon: '📝', desc: 'Rewrite sentences for better clarity and improved structure.',             color: 'from-pink-500 to-rose-500' },
   { id: 'word-counter',          name: 'Word Counter',          icon: '🔢', desc: 'Instantly count words, characters, sentences, and reading time.',          color: 'from-indigo-500 to-blue-600' },
   { id: 'index-checker',         name: 'Index Checker',         icon: '🔍', desc: 'Check instantly whether a URL is indexed by Google Search.',               color: 'from-blue-600 to-indigo-600' },
-  { id: 'youtube-subscribe-generator', name: 'YouTube Subscribe Link', icon: '▶️', desc: 'Generate an auto-subscribe link for your YouTube channel.',      color: 'from-red-500 to-red-700' },
+  { id: 'youtube-subscribe-link-generator', name: 'YouTube Subscribe Link', icon: '▶️', desc: 'Generate an auto-subscribe link for your YouTube channel.',      color: 'from-red-500 to-red-700' },
 ];
 
 export default function HomePage() {

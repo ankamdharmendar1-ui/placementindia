@@ -50,7 +50,7 @@ const YoutubeSubscribeGeneratorPage = () => {
         title="Free YouTube Subscribe Link Generator"
         description="Generate a YouTube auto-subscribe link to convert more viewers into subscribers instantly."
         keywords="youtube subscribe link generator, auto subscribe link, youtube subscriber tool"
-        url="/youtube-subscribe-generator"
+        url="/youtube-subscribe-link-generator"
       />
       <h1 className="text-4xl font-bold mb-4 text-center text-gray-900">Free YouTube Subscribe Link Generator</h1>
       <p className="text-lg text-gray-600 mb-8 text-center">

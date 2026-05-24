@@ -91,7 +91,7 @@ function AppContent() {
             <Route path="/" element={<HomePage />} />
             <Route path="/tools" element={<ToolsHubPage />} />
             <Route path="/index-checker" element={<IndexCheckerPage />} />
-            <Route path="/youtube-subscribe-generator" element={<YoutubeSubscribeGeneratorPage />} />
+            <Route path="/youtube-subscribe-link-generator" element={<YoutubeSubscribeGeneratorPage />} />
             <Route path="/plagiarism-checker" element={<PlagiarismPage />} />
             <Route path="/ai-content-detector" element={<AIDetectionPage />} />
             <Route path="/paraphrasing-tool" element={<ParaphrasePage />} />
