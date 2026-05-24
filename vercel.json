@@ -1,26 +1,8 @@
 {
   "version": 2,
   "framework": "vite",
-  "functions": {
-    "api/index.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "protocol", "value": "http" }],
-      "destination": "https://{host}/:path*",
-      "statusCode": 301
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "quetext.in" }],
-      "destination": "https://www.quetext.in/:path*",
-      "statusCode": 301
-    }
-  ],
+
+
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.js" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },

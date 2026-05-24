@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-beasties-container>
+<head>
+  <meta charset="utf-8" />
+  <title>Free YouTube Subscribe Link Generator – Instantly Create Auto‑Subscribe URLs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Generate a direct YouTube auto‑subscribe link for any channel. No registration required. Boost your subscriber count with a one‑click link." />
+  <link rel="canonical" href="https://yourdomain.com/youtube-subscribe-generator/" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free YouTube Subscribe Link Generator" />
+  <meta property="og:description" content="Create instant YouTube subscribe links for any channel. Perfect for blogs, newsletters, and social media." />
+  <meta property="og:url" content="https://yourdomain.com/youtube-subscribe-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://yourdomain.com/assets/yt-subscribe-preview.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free YouTube Subscribe Link Generator" />
+  <meta name="twitter:description" content="Generate auto‑subscribe URLs for any YouTube channel in seconds." />
+  <meta name="twitter:image" content="https://yourdomain.com/assets/yt-subscribe-preview.png" />
+  <!-- Preload critical assets -->
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="preload" href="app.js" as="script" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Structured Data JSON‑LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YouTube Subscribe Link Generator",
+    "url": "https://yourdomain.com/youtube-subscribe-generator/",
+    "description": "Generate direct YouTube auto‑subscribe URLs for any channel instantly.",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>Free YouTube Subscribe Link Generator</h1>
+      <p class="lead">Enter any YouTube channel URL, custom @handle, or channel ID and instantly get a one‑click subscribe link.</p>
+      <div class="input-group">
+        <input type="text" id="channelInput" placeholder="Channel URL, @handle or ID" autocomplete="off" />
+        <button id="generateBtn" class="btn-primary">Generate Link</button>
+      </div>
+      <div class="output-group hidden" id="outputSection">
+        <input type="text" id="resultLink" readonly />
+        <button class="btn-copy" id="copyBtn">Copy</button>
+      </div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

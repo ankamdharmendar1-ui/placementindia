@@ -1,0 +1,40 @@
+/* style.css – Premium UI for YouTube Subscribe Link Generator */
+
+/* Global reset & typography */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-family:'Inter',system-ui,sans-serif;line-height:1.5;scroll-behavior:smooth;}
+body{background:linear-gradient(135deg, #0f0c29, #302b63, #24243e);min-height:100vh;display:flex;align-items:center;justify-content:center;}
+
+/* Container */
+.container{width:100%;max-width:480px;padding:1rem;}
+
+/* Card with glassmorphism */
+.card{background:rgba(255,255,255,0.12);border-radius:16px;backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.18);padding:2rem;box-shadow:0 8px 32px rgba(0,0,0,0.25);text-align:center;}
+
+h1{font-size:1.75rem;color:#fff;margin-bottom:0.5rem;}
+.lead{font-size:1rem;color:#e0e0e0;margin-bottom:1.5rem;}
+
+/* Input group */
+.input-group{display:flex;gap:0.5rem;justify-content:center;}
+#channelInput{flex:1;padding:0.75rem 1rem;border:none;border-radius:8px;background:rgba(255,255,255,0.2);color:#fff;outline:none;transition:box-shadow 0.3s;}
+#channelInput::placeholder{color:#c0c0c0;}
+#channelInput:focus{box-shadow:0 0 0 3px rgba(255,107,53,0.5);}
+
+.btn-primary{padding:0.75rem 1.5rem;background:#ff6b35;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:transform 0.2s,background 0.3s;}
+.btn-primary:hover{transform:scale(1.05);background:#e65a2c;}
+
+/* Output group */
+.output-group{margin-top:1.5rem;display:flex;gap:0.5rem;justify-content:center;align-items:center;}
+#resultLink{flex:1;padding:0.75rem 1rem;border:none;border-radius:8px;background:rgba(255,255,255,0.2);color:#fff;outline:none;}
+.btn-copy{padding:0.75rem 1rem;background:#007ac6;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:background 0.3s;}
+.btn-copy:hover{background:#005b94;}
+.hidden{display:none;}
+
+/* Toast */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.8);color:#fff;padding:0.75rem 1.5rem;border-radius:8px;opacity:0;pointer-events:none;transition:opacity 0.4s;}
+.toast.show{opacity:1;pointer-events:auto;}
+
+@media (max-width:480px){
+  .card{padding:1.5rem;}
+  h1{font-size:1.5rem;}
+}
