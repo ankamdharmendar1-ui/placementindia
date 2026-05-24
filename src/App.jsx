@@ -21,6 +21,7 @@ const TermsPage = lazy(() => import('./pages/TermsPage'));
 const DisclaimerPage = lazy(() => import('./pages/DisclaimerPage'));
 const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage'));
 const IndexCheckerPage = lazy(() => import('./pages/IndexCheckerPage'));
+const YoutubeSubscribeGeneratorPage = lazy(() => import('./pages/YoutubeSubscribeGeneratorPage'));
 
 // Blog Pages
 const BlogPlagiarismPage = lazy(() => import('./pages/BlogPlagiarismPage'));
@@ -89,7 +90,8 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/tools" element={<ToolsHubPage />} />
-<Route path="/index-checker" element={<IndexCheckerPage />} />
+            <Route path="/index-checker" element={<IndexCheckerPage />} />
+            <Route path="/youtube-subscribe-generator" element={<YoutubeSubscribeGeneratorPage />} />
             <Route path="/plagiarism-checker" element={<PlagiarismPage />} />
             <Route path="/ai-content-detector" element={<AIDetectionPage />} />
             <Route path="/paraphrasing-tool" element={<ParaphrasePage />} />

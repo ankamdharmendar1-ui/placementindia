@@ -72,6 +72,16 @@ const tools = [
     output: 'Indexing status message',
     icon: '🔎',
     keywords: 'free index checker, SEO index check, Google indexed checker'
+  },
+  {
+    id: 'youtube-subscribe-generator',
+    name: 'YouTube Subscribe Link Generator',
+    description: 'Generate an auto-subscribe link for your YouTube channel',
+    purpose: 'Increase YouTube subscribers instantly',
+    input: 'YouTube Channel URL',
+    output: 'Auto-subscribe link',
+    icon: '▶️',
+    keywords: 'youtube subscribe link generator, auto subscribe link'
   }
 ];
 
