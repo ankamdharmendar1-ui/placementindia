@@ -65,8 +65,8 @@ const ContactPage = () => {
                 </svg>
               </div>
               <div>
-                <p className="font-medium">Office</p>
-                <p className="text-gray-600">Hyderabad, Telangana, India</p>
+                <p className="font-semibold text-gray-900">Office</p>
+                <p className="text-gray-600">India</p>
               </div>
             </div>
           </div>
