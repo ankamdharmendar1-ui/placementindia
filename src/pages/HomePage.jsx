@@ -13,6 +13,14 @@ const tools = [
   { id: 'youtube-subscribe-link-generator', name: 'YouTube Subscribe Link', icon: '▶️', desc: 'Generate an auto-subscribe link for your YouTube channel.',      color: 'from-red-500 to-red-700' },
 ];
 
+const blogs = [
+  { id: 'guide-to-avoiding-plagiarism', title: 'A Complete Guide to Avoiding Plagiarism', desc: 'Learn the best practices to keep your content original and plagiarism-free.', date: 'May 10, 2024' },
+  { id: 'how-ai-detectors-work', title: 'How Do AI Detectors Work?', desc: 'Discover the technology behind AI content detection and how accurate it really is.', date: 'May 12, 2024' },
+  { id: 'top-grammar-mistakes', title: 'Top Grammar Mistakes to Avoid', desc: 'Improve your writing instantly by avoiding these common grammatical errors.', date: 'May 14, 2024' },
+  { id: 'art-of-paraphrasing', title: 'The Art of Paraphrasing', desc: 'How to rewrite content effectively without losing its original meaning or context.', date: 'May 16, 2024' },
+  { id: 'why-word-count-matters', title: 'Why Word Count Matters', desc: 'Understanding the ideal length for blog posts, essays, and social media.', date: 'May 18, 2024' },
+];
+
 export default function HomePage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -40,7 +48,7 @@ export default function HomePage() {
       </section>
 
       {/* Tools Grid – mobile friendly */}
-      <section className="grid grid-cols-2 gap-4">
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {tools.map((tool) => (
           <Link
             key={tool.id}
@@ -54,6 +62,23 @@ export default function HomePage() {
             <span className="text-xs text-indigo-500 font-medium">Use →</span>
           </Link>
         ))}
+      </section>
+
+      {/* Blog Section */}
+      <section className="mt-16">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-black text-gray-900 mb-2">Latest From Our Blog</h2>
+          <p className="text-gray-600">Writing tips, guides, and tutorials to enhance your skills.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {blogs.map(blog => (
+            <Link key={blog.id} to={`/blog/${blog.id}`} className="block bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition p-6">
+              <span className="text-xs font-bold text-indigo-500 uppercase tracking-wider">{blog.date}</span>
+              <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">{blog.title}</h3>
+              <p className="text-gray-600 text-sm">{blog.desc}</p>
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   );
