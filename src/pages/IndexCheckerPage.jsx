@@ -26,7 +26,7 @@ const schemaData = [
         "name": "How does the Index Checker work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The tool performs a quick Google search for `site:<URL>` and reports whether any results are found, indicating that the page is indexed."
+          "text": "It's incredibly simple! We just perform a lightning-fast Google query using the site:URL command and open the results right up for you. If Google sees your page, so will you. By the way, while you're waiting for your pages to rank, it's always a great idea to make sure the content itself is high quality by using our Grammar Checker."
         }
       },
       {
@@ -34,7 +34,7 @@ const schemaData = [
         "name": "Why is my page not indexed?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Common reasons include noindex tags, robots.txt blocks, or the page being too new for Google to have crawled it yet."
+          "text": "Don't panic! Usually, it's just because your page is brand new and Google hasn't found it yet. Other common culprits include accidental 'noindex' tags or strict robots.txt blocks. If you suspect Google is ignoring your page because the content feels a little generic, try spicing it up with our Paraphraser or making sure it doesn't get flagged by our AI Detector."
         }
       },
       {
@@ -42,7 +42,7 @@ const schemaData = [
         "name": "Is the Index Checker completely free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes – the tool is 100 % free with no usage limits."
+          "text": "Yes, it is 100% free to use, and you can check as many pages as you want! We love providing tools that make SEO easier. Be sure to explore our other free offerings, like the Plagiarism Checker, to keep your entire website in top shape."
         }
       },
       {
@@ -50,7 +50,7 @@ const schemaData = [
         "name": "Can I check multiple URLs at once?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Currently the tool checks one URL at a time, but you can run it repeatedly for each URL."
+          "text": "Right now, you can check them one by one to ensure you see the exact Google results for each specific page. It only takes a second to run! If you're checking long articles, don't forget to keep an eye on your character limits with our Word Counter."
         }
       }
     ]
@@ -135,19 +135,19 @@ const handleCheck = async () => {
         <div className="space-y-4">
           <div className="border-b pb-4">
             <h3 className="font-semibold text-lg mb-2">How does the Index Checker work?</h3>
-            <p className="text-gray-600">The tool performs a quick Google search for <code>site:URL</code> and shows the results in a new tab.</p>
+            <p className="text-gray-600">It's incredibly simple! We just perform a lightning-fast Google query using the <code>site:URL</code> command and open the results right up for you. If Google sees your page, so will you. By the way, while you're waiting for your pages to rank, it's always a great idea to make sure the content itself is high quality by using our <a href="/grammar-checker" className="text-blue-600 hover:underline">Grammar Checker</a>.</p>
           </div>
           <div className="border-b pb-4">
             <h3 className="font-semibold text-lg mb-2">Why is my page not indexed?</h3>
-            <p className="text-gray-600">Possible reasons include noindex meta tags, robots.txt blocks, or the page being too new.</p>
+            <p className="text-gray-600">Don't panic! Usually, it's just because your page is brand new and Google hasn't found it yet. Other common culprits include accidental "noindex" tags or strict robots.txt blocks. If you suspect Google is ignoring your page because the content feels a little generic, try spicing it up with our <a href="/paraphrasing-tool" className="text-blue-600 hover:underline">Paraphraser</a> or making sure it doesn't get flagged by our <a href="/ai-content-detector" className="text-blue-600 hover:underline">AI Detector</a>.</p>
           </div>
           <div className="border-b pb-4">
             <h3 className="font-semibold text-lg mb-2">Is the Index Checker completely free?</h3>
-            <p className="text-gray-600">Yes – it’s 100 % free with no usage limits.</p>
+            <p className="text-gray-600">Yes, it is 100% free to use, and you can check as many pages as you want! We love providing tools that make SEO easier. Be sure to explore our other free offerings, like the <a href="/plagiarism-checker" className="text-blue-600 hover:underline">Plagiarism Checker</a>, to keep your entire website in top shape.</p>
           </div>
           <div className="border-b pb-4">
             <h3 className="font-semibold text-lg mb-2">Can I check multiple URLs at once?</h3>
-            <p className="text-gray-600">Currently you can check one URL at a time, but you may run the tool repeatedly.</p>
+            <p className="text-gray-600">Right now, you can check them one by one to ensure you see the exact Google results for each specific page. It only takes a second to run! If you're checking long articles, don't forget to keep an eye on your character limits with our <a href="/word-counter" className="text-blue-600 hover:underline">Word Counter</a>.</p>
           </div>
         </div>
       </div>

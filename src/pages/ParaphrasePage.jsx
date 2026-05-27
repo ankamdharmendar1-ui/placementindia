@@ -53,7 +53,7 @@ const ParaphrasePage = () => {
           "name": "Is paraphrasing the same as plagiarism?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Paraphrasing is not plagiarism if you cite your sources correctly and rewrite the text significantly. Simply changing a few words (patchwriting) can still be considered plagiarism. Our free paraphrasing tool helps you get started with a new structure."
+            "text": "Not at all, as long as you do it right! If you significantly rewrite the text and properly cite your original sources, you're perfectly safe. Just swapping out a couple of words (patchwriting) can get you into trouble, which is why our tool gives your sentences a completely fresh structure. To be absolutely sure you're in the clear, we highly recommend tossing your final draft into our Plagiarism Checker."
           }
         },
         {
@@ -61,7 +61,7 @@ const ParaphrasePage = () => {
           "name": "How many styles are available in the free paraphrasing tool?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer five distinct styles: Standard, Formal, Casual, Creative, and Academic. Each style uses different vocabulary and sentence structures to achieve the desired tone."
+            "text": "We give you five awesome vibes to choose from: Standard, Formal, Casual, Creative, and Academic! Whether you're writing a laid-back blog post or a serious business report, we've got a tone for you. Once you've rephrased everything, don't forget to run it by our Grammar Checker to ensure your new sentences are grammatically flawless."
           }
         },
         {
@@ -69,7 +69,7 @@ const ParaphrasePage = () => {
           "name": "Is the paraphrased text unique?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, our free paraphrasing tool generates unique variations of your input. However, we recommend always running the result through our plagiarism checker to ensure it's sufficiently different from the source."
+            "text": "Yes! Our tool works hard to generate highly unique variations of whatever you feed it. However, if you're worried about search engines thinking it sounds like a bot, you can always test your freshly reworded text with our AI Detector to ensure it maintains a natural, human flow."
           }
         },
         {
@@ -77,7 +77,7 @@ const ParaphrasePage = () => {
           "name": "Can I use this free paraphrasing tool for academic writing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, the Academic style is specifically designed to help students and researchers reword complex ideas while maintaining a professional and scholarly tone suitable for essays and research papers."
+            "text": "You sure can. Our Academic style is basically tailored for students and researchers. It helps you untangle complex thoughts and rewrite them into a scholarly, professional tone. If you're trying to hit a specific page length for that tricky essay, definitely keep our Word Counter open in another tab!"
           }
         }
       ]
@@ -256,19 +256,19 @@ const ParaphrasePage = () => {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-xl mb-2 text-gray-900">Is paraphrasing the same as plagiarism?</h3>
-              <p className="text-gray-700">Paraphrasing is not plagiarism if you cite your sources correctly and rewrite the text significantly. Simply changing a few words (patchwriting) can still be considered plagiarism. Our paraphrasing tool helps you get started with a completely new sentence structure.</p>
+              <p className="text-gray-700">Not at all, as long as you do it right! If you significantly rewrite the text and properly cite your original sources, you're perfectly safe. Just swapping out a couple of words (patchwriting) can get you into trouble, which is why our tool gives your sentences a completely fresh structure. To be absolutely sure you're in the clear, we highly recommend tossing your final draft into our <a href="/plagiarism-checker" className="text-blue-600 hover:underline">Plagiarism Checker</a>.</p>
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2 text-gray-900">How many styles are available in the paraphrasing tool?</h3>
-              <p className="text-gray-700">We offer five distinct styles: Standard, Formal, Casual, Creative, and Academic. Each style uses different vocabulary and sentence structures to achieve the desired tone for your rephrased text.</p>
+              <p className="text-gray-700">We give you five awesome vibes to choose from: Standard, Formal, Casual, Creative, and Academic! Whether you're writing a laid-back blog post or a serious business report, we've got a tone for you. Once you've rephrased everything, don't forget to run it by our <a href="/grammar-checker" className="text-blue-600 hover:underline">Grammar Checker</a> to ensure your new sentences are grammatically flawless.</p>
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2 text-gray-900">Is the paraphrased text unique?</h3>
-              <p className="text-gray-700">Yes, our online paraphrasing tool generates unique variations of your input. However, we recommend always running the result through a plagiarism checker to ensure it is sufficiently different from the original source material.</p>
+              <p className="text-gray-700">Yes! Our tool works hard to generate highly unique variations of whatever you feed it. However, if you're worried about search engines thinking it sounds like a bot, you can always test your freshly reworded text with our <a href="/ai-content-detector" className="text-blue-600 hover:underline">AI Detector</a> to ensure it maintains a natural, human flow.</p>
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2 text-gray-900">Can I use this paraphrasing tool for academic writing?</h3>
-              <p className="text-gray-700">Absolutely. The "Academic" style is specifically designed to help students, researchers, and scholars reword complex ideas while maintaining a professional and scholarly tone suitable for essays, thesis papers, and research publications.</p>
+              <p className="text-gray-700">You sure can. Our "Academic" style is basically tailored for students and researchers. It helps you untangle complex thoughts and rewrite them into a scholarly, professional tone. If you're trying to hit a specific page length for that tricky essay, definitely keep our <a href="/word-counter" className="text-blue-600 hover:underline">Word Counter</a> open in another tab!</p>
             </div>
           </div>
         </section>

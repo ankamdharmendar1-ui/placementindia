@@ -28,7 +28,7 @@ const schemaData = [
         "name": "Can it detect spelling errors too?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, our tool checks for both grammar and spelling mistakes, ensuring your document is error‑free."
+          "text": "You bet! We check for both sneaky spelling mistakes and tricky grammar slip-ups so your final document looks spotless. If you're ever worried that fixing those errors might accidentally change your unique voice, try running your text through our Paraphraser for fresh ways to phrase your ideas smoothly."
         }
       },
       {
@@ -36,7 +36,7 @@ const schemaData = [
         "name": "Is the grammar checker free to use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our basic grammar check is completely free. We also offer premium features for more‑in‑depth stylistic suggestions and advanced error detection."
+          "text": "Yes, the basic grammar check is 100% free! We believe everyone deserves clean, professional writing. For those writing super long essays, feel free to track your progress with our Word Counter. And if you're submitting schoolwork, we highly recommend doing a quick pass with our Plagiarism Checker as well, just to be safe!"
         }
       },
       {
@@ -44,7 +44,7 @@ const schemaData = [
         "name": "How do I use the suggestions?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "After scanning, our tool provides a list of suggestions. Review each one and manually update your text based on the feedback."
+          "text": "It's super straightforward. Once the scan finishes, we hand you a list of clear suggestions. You get to play editor—just review our notes and manually tweak your text however you see fit. Want to make sure your newly polished text still sounds like a human wrote it? Drop it into our AI Detector for peace of mind."
         }
       },
       {
@@ -52,7 +52,7 @@ const schemaData = [
         "name": "Does it work for non‑native speakers?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! Our grammar checker is an excellent tool for ESL students and professionals who want to ensure their English writing is natural and correct."
+          "text": "Absolutely, and it's a game-changer! If English isn't your first language, our grammar checker acts like a friendly local guide helping you sound completely natural. We're here to help you build confidence in your professional or academic writing."
         }
       }
     ]
@@ -158,19 +158,19 @@ const GrammarPage = () => {
           <div className="space-y-4">
             <div className="border-b pb-4">
               <h3 className="font-semibold text-lg mb-2">Can it detect spelling errors too?</h3>
-              <p className="text-gray-600">Yes, our tool checks for both grammar and spelling mistakes, ensuring your document is error‑free.</p>
+              <p className="text-gray-600">You bet! We check for both sneaky spelling mistakes and tricky grammar slip-ups so your final document looks spotless. If you're ever worried that fixing those errors might accidentally change your unique voice, try running your text through our <a href="/paraphrasing-tool" className="text-blue-600 hover:underline">Paraphraser</a> for fresh ways to phrase your ideas smoothly.</p>
             </div>
             <div className="border-b pb-4">
               <h3 className="font-semibold text-lg mb-2">Is the grammar checker free to use?</h3>
-              <p className="text-gray-600">Our basic grammar check is completely free. We also offer premium features for more‑in‑depth stylistic suggestions and advanced error detection.</p>
+              <p className="text-gray-600">Yes, the basic grammar check is 100% free! We believe everyone deserves clean, professional writing. For those writing super long essays, feel free to track your progress with our <a href="/word-counter" className="text-blue-600 hover:underline">Word Counter</a>. And if you're submitting schoolwork, we highly recommend doing a quick pass with our <a href="/plagiarism-checker" className="text-blue-600 hover:underline">Plagiarism Checker</a> as well, just to be safe!</p>
             </div>
             <div className="border-b pb-4">
               <h3 className="font-semibold text-lg mb-2">How do I use the suggestions?</h3>
-              <p className="text-gray-600">After scanning, our tool will provide a list of suggestions. You can review each one and manually update your text based on the feedback provided.</p>
+              <p className="text-gray-600">It's super straightforward. Once the scan finishes, we hand you a list of clear suggestions. You get to play editor—just review our notes and manually tweak your text however you see fit. Want to make sure your newly polished text still sounds like a human wrote it? Drop it into our <a href="/ai-content-detector" className="text-blue-600 hover:underline">AI Detector</a> for peace of mind.</p>
             </div>
             <div className="border-b pb-4">
               <h3 className="font-semibold text-lg mb-2">Does it work for non‑native speakers?</h3>
-              <p className="text-gray-600">Absolutely! Our grammar checker is an excellent tool for ESL students and professionals who want to ensure their English writing is natural and correct.</p>
+              <p className="text-gray-600">Absolutely, and it's a game-changer! If English isn't your first language, our grammar checker acts like a friendly local guide helping you sound completely natural. We're here to help you build confidence in your professional or academic writing.</p>
             </div>
           </div>
         </section>

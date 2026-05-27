@@ -5,11 +5,15 @@ const { calculateSimilarity } = require('./similarity');
 async function checkPlagiarism(text) {
   try {
     const cleanedText = preprocessText(text);
-    const chunks = chunkText(cleanedText, 100);
+    const chunks = chunkText(cleanedText, 25);
+    
+    // Limit to max 10 chunks to prevent Vercel 10s serverless timeout
+    const maxChunks = 10;
+    const chunksToCheck = chunks.slice(0, maxChunks);
     
     const matches = [];
     
-    for (const chunk of chunks) {
+    for (const chunk of chunksToCheck) {
       const searchResults = await searchWeb(chunk);
       
       for (const result of searchResults) {
@@ -27,8 +31,8 @@ async function checkPlagiarism(text) {
     }
     
     let plagiarismScore = 0;
-    if (chunks.length > 0) {
-      plagiarismScore = (matches.length / chunks.length) * 100;
+    if (chunksToCheck.length > 0) {
+      plagiarismScore = (matches.length / chunksToCheck.length) * 100;
     }
     
     if (matches.length === 0) {
@@ -50,7 +54,7 @@ async function checkPlagiarism(text) {
         }
       }
       
-      plagiarismScore = chunks.length > 0 ? (matches.length / chunks.length) * 100 : 0;
+      plagiarismScore = chunksToCheck.length > 0 ? (matches.length / chunksToCheck.length) * 100 : 0;
     }
     
     return {

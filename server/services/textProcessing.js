@@ -7,7 +7,7 @@ function preprocessText(text) {
     .trim();
 }
 
-function chunkText(text, chunkSize = 100) {
+function chunkText(text, chunkSize = 25) {
   const words = text.split(' ');
   const chunks = [];
   
