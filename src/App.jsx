@@ -30,7 +30,6 @@ const BlogGrammarPage = lazy(() => import('./pages/BlogGrammarPage'));
 const BlogParaphrasingPage = lazy(() => import('./pages/BlogParaphrasingPage'));
 const BlogWordCountPage = lazy(() => import('./pages/BlogWordCountPage'));
 
-import { hasAdConsent, CONSENT_EVENT } from './lib/adConsent';
 
 const LEGAL_PATHS = new Set([
   '/privacy-policy',
@@ -43,41 +42,7 @@ function AppContent() {
   const { pathname } = useLocation();
   const showBottomAd = !LEGAL_PATHS.has(pathname);
 
-  useEffect(() => {
-    // Dynamic Google AdSense lazy-loader
-    const loadAdSense = () => {
-      // Avoid duplicate script tag creation
-      if (document.querySelector('script[src*="adsbygoogle"]')) return;
-      
-      // Inject only if user consented to cookies/ads
-      if (hasAdConsent()) {
-        const script = document.createElement('script');
-        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8710423330759174";
-        script.crossOrigin = "anonymous";
-        script.async = true;
-        document.head.appendChild(script);
-      }
-    };
 
-    // Load after browser becomes idle to protect First Contentful Paint / TBT scores
-    const handleInit = () => {
-      if (window.requestIdleCallback) {
-        window.requestIdleCallback(loadAdSense);
-      } else {
-        setTimeout(loadAdSense, 2000);
-      }
-    };
-
-    // Try loading on page mount
-    handleInit();
-
-    // Listen to changes in consent status (e.g., when the user clicks 'Accept All')
-    window.addEventListener(CONSENT_EVENT, loadAdSense);
-
-    return () => {
-      window.removeEventListener(CONSENT_EVENT, loadAdSense);
-    };
-  }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 w-full max-w-full">
