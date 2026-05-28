@@ -63,6 +63,12 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.quetext.in/youtube-handle-generator</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Other Important Pages -->
   <url>
     <loc>https://www.quetext.in/about</loc>
