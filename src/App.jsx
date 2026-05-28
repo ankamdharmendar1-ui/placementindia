@@ -23,6 +23,7 @@ const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage'));
 const IndexCheckerPage = lazy(() => import('./pages/IndexCheckerPage'));
 const YoutubeSubscribeGeneratorPage = lazy(() => import('./pages/YoutubeSubscribeGeneratorPage'));
 const YoutubeHandleGeneratorPage = lazy(() => import('./pages/YoutubeHandleGeneratorPage'));
+const RobloxRpNamesPage = lazy(() => import('./pages/RobloxRpNamesPage'));
 
 // Blog Pages
 const BlogPlagiarismPage = lazy(() => import('./pages/BlogPlagiarismPage'));
@@ -59,6 +60,7 @@ function AppContent() {
             <Route path="/index-checker" element={<IndexCheckerPage />} />
             <Route path="/youtube-subscribe-link-generator" element={<YoutubeSubscribeGeneratorPage />} />
             <Route path="/youtube-handle-generator" element={<YoutubeHandleGeneratorPage />} />
+            <Route path="/roblox-rp-names" element={<RobloxRpNamesPage />} />
             <Route path="/plagiarism-checker" element={<PlagiarismPage />} />
             <Route path="/ai-content-detector" element={<AIDetectionPage />} />
             <Route path="/paraphrasing-tool" element={<ParaphrasePage />} />

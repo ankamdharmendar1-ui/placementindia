@@ -92,6 +92,16 @@ const tools = [
     output: 'List of available handle ideas',
     icon: '💡',
     keywords: 'youtube handle generator, youtube name generator'
+  },
+  {
+    id: 'roblox-rp-names',
+    name: 'Roblox RP Names (1000+)',
+    description: 'Discover 1000+ unique Roblox roleplay names',
+    purpose: 'Find the perfect name for your character',
+    input: 'None',
+    output: '1000 Unique Names',
+    icon: '🎮',
+    keywords: 'roblox rp names, roblox roleplay names generator'
   }
 ];
 
