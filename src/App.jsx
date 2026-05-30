@@ -6,7 +6,7 @@ import CookieConsent from './components/CookieConsent';
 import PageAds from './components/PageAds';
 import PageLoader from './components/PageLoader';
 
-const HomePage = lazy(() => import('./pages/HomePage'));
+import HomePage from './pages/HomePage';
 const PlagiarismPage = lazy(() => import('./pages/PlagiarismPage'));
 const AIDetectionPage = lazy(() => import('./pages/AIDetectionPage'));
 const ParaphrasePage = lazy(() => import('./pages/ParaphrasePage'));
