@@ -44,8 +44,9 @@ function AppContent() {
   const { pathname } = useLocation();
   const showBottomAd = !LEGAL_PATHS.has(pathname);
 
-
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 w-full max-w-full">
       <Navbar />
