@@ -1,25 +1,14 @@
-const nlp = require('compromise');
+const { callOpenRouter } = require('./openRouterService');
 
 async function humanizeText(text) {
   try {
     if (!text || text.trim().length === 0) return "";
     
-    let doc = nlp(text);
-    
-    // Humans use contractions extensively (e.g., "do not" -> "don't", "I am" -> "I'm")
-    doc.contractions().contract();
-    
-    let humanized = doc.text();
-    
-    if (text.length > 50) {
-      const fillers = ["Actually, ", "To be honest, ", "I think ", "Well, ", "In my opinion, "];
-      const randomFiller = fillers[Math.floor(Math.random() * fillers.length)];
-      
-      // Capitalize properly after inserting filler
-      if (humanized.charAt(0)) {
-         humanized = randomFiller + humanized.charAt(0).toLowerCase() + humanized.slice(1);
-      }
-    }
+    const systemPrompt = `You are an expert humanizer. Your task is to rewrite the following text so that it reads naturally and organically, like it was written by a human.
+    Use varied sentence structure, occasional colloquialisms if appropriate, and eliminate robotic or formulaic phrasing.
+    Provide ONLY the humanized text. Do not include introductory or concluding remarks.`;
+
+    const humanized = await callOpenRouter(systemPrompt, text, { temperature: 0.8 });
     
     return humanized;
   } catch (error) {

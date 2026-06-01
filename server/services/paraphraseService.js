@@ -1,5 +1,5 @@
+const { callOpenRouter } = require('./openRouterService');
 const { preprocessText } = require('./textProcessing');
-const nlp = require('compromise');
 
 async function paraphraseText(text, style = 'standard') {
   try {
@@ -7,48 +7,18 @@ async function paraphraseText(text, style = 'standard') {
     
     if (!cleanedText) return "";
     
-    // Use compromise NLP to do structural paraphrasing
-    let doc = nlp(cleanedText);
+    let stylePrompt = "Paraphrase the following text while keeping its original meaning intact.";
     
-    // Depending on style, we do different NLP transformations
     if (style === 'fluent') {
-      // Convert passive voice to active or simplify verbs if possible (rough heuristic)
-      doc.verbs().toPresentTense();
-      doc.nouns().toPlural(); // Just as a demonstrable change
+      stylePrompt = "Paraphrase the following text to make it sound fluent, engaging, and articulate.";
     } else if (style === 'formal') {
-      doc.verbs().toPastTense();
-    } else {
-      // Standard: substitute common adverbs and adjectives
-      const synonyms = {
-        'good': 'excellent', 'bad': 'poor', 'happy': 'joyful', 
-        'sad': 'sorrowful', 'big': 'substantial', 'small': 'minor',
-        'important': 'significant', 'use': 'utilize', 'help': 'assist',
-        'show': 'demonstrate', 'make': 'create', 'do': 'perform'
-      };
-      
-      doc.match('#Adjective').forEach((m) => {
-        let word = m.text().toLowerCase();
-        if (synonyms[word]) {
-           m.replaceWith(synonyms[word]);
-        }
-      });
-      
-      doc.match('#Verb').forEach((m) => {
-        let word = m.text().toLowerCase();
-        if (synonyms[word]) {
-           m.replaceWith(synonyms[word]);
-        }
-      });
+      stylePrompt = "Paraphrase the following text into a highly formal, academic, and professional tone.";
     }
-    
-    let paraphrased = doc.text();
-    
-    // Add a stylistic prefix
-    if (style === 'fluent') {
-       paraphrased = "In a fluent manner: " + paraphrased;
-    } else if (style === 'formal') {
-       paraphrased = "Formally speaking, " + paraphrased;
-    }
+
+    const systemPrompt = `You are an expert editor and writer. ${stylePrompt}
+    Provide ONLY the paraphrased text. Do not include introductory or concluding remarks.`;
+
+    const paraphrased = await callOpenRouter(systemPrompt, cleanedText, { temperature: 0.7 });
     
     return paraphrased;
   } catch (error) {
